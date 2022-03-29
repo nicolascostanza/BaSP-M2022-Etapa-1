@@ -12,3 +12,5 @@
 ◉I got the HTML-code of some small icons such as the letter or house in the contact us section of the aside
 
 ◉And the other icons download them in png format
+
+** Author: Nicolas Costanza**
