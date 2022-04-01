@@ -1,6 +1,6 @@
 # BECOME A SOFTWARE PROFESSIONAL
 
-## Week 1
+## Week 2
 ### As i thought
 
 ◉I divided the page into 4 parts. Header, Main, Aside, Footer.
