@@ -1,16 +1,9 @@
+/* ETIQUETAS GENERALES */
 header{
     width: 1440px;
     height: 60px;
     position: fixed;
     background-color: #373867;
-}
-
-main{
-    display: inline-block ;
-    margin-left: 288px;
-    padding-top: 60px;
-    width: 1152px;
-    z-index: -1;
 }
 aside{
     background-color: #D9D9E2;
@@ -19,6 +12,14 @@ aside{
     width: 288px;
     height: 964px;
     margin-top: 60px;
+    z-index: 1;
+}
+main{
+    display: inline-block ;
+    margin-left: 288px;
+    padding-top: 60px;
+    width: 1152px;
+    z-index: -1;
 }
 footer{
     display: inline-block;
@@ -28,18 +29,150 @@ footer{
     margin-left: 288px;
     background-color: #D9D9E2;
 }
-
-/* section{
-    padding-left: 80px;
-} */
-.menu-hamburguesa{
-    position: fixed;
+h1, h2, h3, h4, p, span, li{
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #373867;
+}
+h1{
+    width: 322px;
+    height: 44px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;  
+    margin-bottom: 40px;
+}
+h2{
+    width: 199px;
+    height: 35px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 30px;
+    width: 800px;
+}
+h3{
+    display: inline-block;
+    width: 400px;
+    height: 23px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    padding-left: 30px;
+}
+h4{
+    display: inline-block;
+    width: 90px;
+    height: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 15px;
+}
+/* ASIDE */
+nav ul li{
+    width: 220px;
+    margin-left: 35px;
+    padding: 18px 0 15px 0;
+    border-bottom: 1px solid #373867;
+}
+nav ul li a{
+    color: #373867;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #373867;
+}
+aside > p:nth-child(4){
+    margin-left: 35px;
+    padding: 18px 25px 15px 0;
+}
+address{
+    margin-left: 35px;
+    padding-bottom: 15px;
+}
+address ul li{
+    padding-left: 3px;
+}
+address ul li:last-child{
+    padding-left: 23px;
+}
+/* MAIN */
+section{
+    margin-left: 70px;
+}
+section > div{
+    display: inline-block;
+    width: 490px;
+    height: 112px;
+}
+/* FORM MAIN */
+input{
+    border: solid #373867 1px;
+    border-radius: 5px;
+    width: 450px;
+    height: 37px;
+}
+input:first-child {
+    margin-right: 50px;
+}
+input::placeholder{
+    padding-left: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+}
+label{
+    color: #373867;
+    height: 16px;
+    position: relative;
+    left: -50px;
+    z-index: -1;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+textarea{
+    margin-top: 25px;
+    width: 960px;
+    height: 150px;
+    border: solid #373867 1px;
+    border-radius: 5px;
+}
+textarea::placeholder{
+    padding: 10px;
+    width: 200px;
+    height: 15px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+}
+ol li{
     margin-left: 15px;
-    margin-top: 15px;
+}
+/* FOOTER */
+footer p{
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    margin-left: 270px;
+    color: black;
+    width: 211px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
     font-size: 30px;
 }
-/* HEADER */
-/* hacer mas fina o gruesa la letra */
+/* CLASS
+header classes */
 .header-radium{
     display: inline-block;
     padding: 10px 0 10px 20px;
@@ -58,17 +191,7 @@ footer{
     font-family: 'Roboto';
     font-style: normal;
 }
-
-h1, h2, h3, h4, p, span, li, .menu-hamburguesa{
-    color: #373867;
-}
-h1, h2, h3, h4, p, span, li{
-    font-family: 'Roboto';
-    font-style: normal;
-}
-
-/* ASIDE */
-
+/* aside classes */
 .menu {
     width: 38px;
     margin-left: 30px;
@@ -81,46 +204,19 @@ h1, h2, h3, h4, p, span, li{
     margin-top: 30px;
     border-bottom: 2px solid #AACE9B;
 }
-.list-item{
-    width: 220px;
-    margin-left: 35px;
-    padding: 18px 0 15px 0;
-    border-bottom: 1px solid #373867;
-}
-
-.list-item > a{
+/* main classes */
+.hamburger-menu{
+    position: fixed;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 30px;
     color: #373867;
 }
-
-aside > p:nth-child(4){
-    margin-left: 35px;
-    padding: 18px 25px 15px 0;
-}
-
-address{
-    margin-left: 35px;
-    padding-bottom: 15px;
-}
-
-address > ul > li{
-    padding-left: 3px;
-}
-address > ul > li:last-child{
-    padding-left: 25px;
-}
-
-/* MAIN */
-
-section{
-    margin-left: 70px;
-}
-/* principal section */
-.principal{
+.main-section{
     padding-top: 100px;
     height: 600px;
 }
-
-.principal-texto{
+.main-text{
     display: inline-block;
     width: 430px;
     font-family: 'Roboto';
@@ -131,12 +227,21 @@ section{
     padding-right: 30px;
     z-index: -1;
 }
-
-.principal-texto:nth-child(2){
+.main-text:nth-child(2){
     position: relative;
     top: -230px;
 }
-.principal-subtexto{
+.img-watch{
+    display: inline-block;
+    width: 570px;
+    height: 390px;
+    object-fit: cover;
+    position: relative;
+    top: -85px;
+    z-index: -1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.6));;
+}
+.secondary-text{
     display: inline-block;
     width: 430px;
     font-family: 'Roboto';
@@ -149,50 +254,7 @@ section{
     top: -200px;
     z-index: -1;
 }
-
-.img-reloj{
-    display: inline-block;
-    width: 570px;
-    height: 390px;
-    object-fit: cover;
-    position: relative;
-    top: -85px;
-    z-index: -1;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.6));;
-}
-
-h1{
-    color: #373867;
-    width: 322px;
-    height: 44px;
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 70px;  
-    margin-bottom: 40px;
-}
-h2{
-    color: #373867;
-    width: 199px;
-    height: 35px;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;
-    margin-bottom: 30px;
-    width: 800px;
-}
-
-h3{
-    display: inline-block;
-    color: #373867;
-    width: 400px;
-    height: 23px;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    padding-left: 30px;
-}
-
-.estrella{
+.star{
     display: inline-block;
     font-size: 64px;
     color: #C4C4C4;
@@ -200,59 +262,23 @@ h3{
     top: 30px; 
     z-index: -1;
 }
-
-section > div{
-    display: inline-block;
-    width: 490px;
-    height: 112px;
-}
-
-
-.texto{
+.text{
     padding-left: 88px;
     padding-right: 30px;
 }
-
-/* FORM */
-
-input{
-    border: solid #373867 1px;
-    border-radius: 5px;
-    width: 450px;
-    height: 37px;
+.separator{
+    width: 900px;
+    height: 2px;
+    background: #373867;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 92px;
 }
-input:first-child {
-    margin-right: 50px;
-}
-input::placeholder{
-    padding-left: 10px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
-}
-
-.titulo-contact-area{
+/* form classes */
+.title-contact-area{
     margin-top: 25px;
     margin-bottom: 10px;
-}
-
-.input-radio{
-    width: 16px;
-    height: 16px;
-}
-label{
-    color: #373867;
-    height: 16px;
-    position: relative;
-    left: -50px;
-    z-index: -1;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
 }
 .contact{
     display: inline-block;
@@ -265,25 +291,10 @@ label{
 .contact:last-child{
     padding-left: 248px;
 }
-
-textarea{
-    margin-top: 25px;
-    width: 960px;
-    height: 150px;
-    border: solid #373867 1px;
-    border-radius: 5px;
+.input-radio{
+    width: 16px;
+    height: 16px;
 }
-textarea::placeholder{
-    padding: 10px;
-    width: 200px;
-    height: 15px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
-}
-/* botones */
 .btn-send{
     margin-top: 20px;
     background: #AACE9B;
@@ -311,17 +322,6 @@ textarea::placeholder{
     line-height: 18px;
     text-align: center;
 }
-
-
-/* about us  */
-
-.img-cohete{
-    width: 600px;
-    display: inline-block;
-    position: relative;
-    top: -80px;
-    z-index: -1;
-}
 .about-us{
     width: 383px;
     height: 210px;
@@ -335,39 +335,27 @@ textarea::placeholder{
     font-size: 20px;
     line-height: 30px;
 }
-
-/* products */
-
-h4{
+.img-rocket{
+    width: 600px;
     display: inline-block;
-    width: 90px;
-    height: 16px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 15px;
+    position: relative;
+    top: -80px;
+    z-index: -1;
 }
-
-.listas{
+.lists{
     width: 250px;
 }
-ol > li {
-    margin-left: 15px;
-}
 
-.listas:nth-child(2){
+
+.lists:nth-child(2){
     margin-left: 160px;
 }
-.listas:nth-child(3){
+.lists:nth-child(3){
     margin-left: 170px;
     width: 100px;
 }
-
-
-/* FOOTER */
-.linkedin > img {
+/* footer classes */
+.linkedin img{
     width: 50px;
     height: 50px;
     margin-left: 30px;
@@ -375,7 +363,7 @@ ol > li {
     margin-top: 10px;
 }
 
-.twitter > img {
+.twitter img{
     width: 50px;
     height: 50px;
     margin-left: 10px;
@@ -383,7 +371,7 @@ ol > li {
     margin-top: 10px;
 }
 
-.whatsapp > img {
+.whatsapp img{
     width: 50px;
     height: 50px;
     margin-left: 10px;
@@ -391,53 +379,10 @@ ol > li {
     margin-top: 10px;
 }
 
-.facebook > img {
+.facebook img {
     width: 50px;
     height: 50px;
     padding-left: 10px;
     padding-bottom: 5px;
     padding-top: 10px;
 }
-
-footer > p {
-    display: inline-block;
-    position: relative;
-    top: -20px;
-    margin-left: 270px;
-    color: black;
-    width: 211px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-}
-/* DEMAS */
-
-/*  */
-a{
-    text-decoration: none;
-}
-a:visited{
-    color: #373867;
-}
-
-
-
-/* separadoras */
-
-.separador{
-    width: 900px;
-    height: 2px;
-    background: #373867;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-left: 92px;
-}
-
-/* problema de q no toma los valores el segundo separados */
-/* mostrar a agus nsoe pq me toma el 1 y el 4 y desp el color me toma 3 y 4 */
-/* .separador:nth-child(3){
-    background-color: red;
-} */
-
