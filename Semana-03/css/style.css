@@ -21,6 +21,7 @@ main{
     margin-left: 288px;
     padding-top: 60px;
     z-index: -1;
+    /* font-family: 'Roboto', sans-serif; */
 }
 footer{
     display: inline-block;
@@ -29,32 +30,50 @@ footer{
     margin: 30px 0 0 288px;
     background-color: #D9D9E2;
 }
-h1, h2, h3, h4, p, span, li{
+/* h1, h2, h3, h4, p, span, li{
     color: #373867;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
-}
+} */
 h1{
     width: 322px;
     height: 44px;
     margin-bottom: 40px;
-    font-size: 60px;
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
     font-weight: 700;
+    font-size: 60px;
     line-height: 70px;
 }
-h2{
+/* h2{
     width: 800px;
     height: 35px;
     margin-bottom: 30px;
     font-size: 30px;
     font-weight: 700;
     line-height: 35px;
+} */
+h2{
+    width: 800px;
+    height: 35px;
+    margin-bottom: 30px;
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
 }
 h3{
     display: inline-block;
     width: 400px;
     height: 23px;
-    padding-left: 30px;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
     font-size: 20px;
     font-weight: 500;
     line-height: 23px;
@@ -64,16 +83,26 @@ h4{
     width: 90px;
     height: 16px;
     margin-bottom: 15px;
+    color: #373867;
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
 }
 /* ASIDE */
+aside p{
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+}
 nav ul li{
     width: 220px;
     margin-left: 35px;
     padding: 18px 0 15px 0;
     border-bottom: 1px solid #373867;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
 }
 nav ul li a{
     color: #373867;
@@ -93,6 +122,12 @@ address{
     padding-bottom: 15px;
 }
 address ul li{
+    color: #373867;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
     padding-left: 3px;
 }
 address ul li:last-child{
@@ -122,15 +157,15 @@ input::placeholder{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 14px;
+    line-height: 16px;
 }
 label{
     position: relative;
     left: -50px;
     height: 16px;
     color: #373867;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -148,7 +183,7 @@ textarea::placeholder{
     width: 200px;
     height: 15px;
     padding: 10px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 13px;
     font-weight: 400;
@@ -168,7 +203,9 @@ footer p{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
 }
 /* CLASS
 header classes */
@@ -178,7 +215,7 @@ header classes */
     color: #49A37B;
     font-size: 40px;
     font-weight: bold;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
 }
 .header-rocket{
@@ -187,18 +224,21 @@ header classes */
     color: #AACE9B;
     font-size: 40px;
     font-weight: lighter;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
 }
 /* aside classes */
 .menu {
     width: 38px;
     margin: 30px 0 0 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #373867;
     border-bottom: 2px solid #AACE9B;
 }
 .contact-us {
-    width: 70px;
+    width: 80px;
     margin: 30px 0 0 30px;
+    color: #373867;
     border-bottom: 2px solid #AACE9B;
 }
 /* main classes */
@@ -220,7 +260,8 @@ header classes */
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 23px;
+    color: #373867;
     z-index: -1;
 }
 .main-text:nth-child(2){
@@ -243,6 +284,7 @@ header classes */
     top: -200px;
     width: 430px;
     padding-right: 30px;
+    color: #373867;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -253,13 +295,20 @@ header classes */
 .star{
     display: inline-block;
     position: relative; 
-    top: 30px; 
+    top: 35px; 
     color: #C4C4C4;
-    font-size: 64px;
+    width: 64px;
+    height: 64px;
     z-index: -1;
 }
 .text{
     padding: 0 30px 0 88px;
+    color: #373867;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
 }
 .separator{
     width: 900px;
@@ -272,6 +321,12 @@ header classes */
 /* form classes */
 .title-contact-area{
     margin: 25px 0 10px 0;
+    color: #373867;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
 }
 .contact{
     display: inline-block;
@@ -284,6 +339,10 @@ header classes */
 .contact:last-child{
     padding-left: 248px;
 }
+.contact > label{
+    position: relative;
+    top: -3px;
+}
 .input-radio{
     width: 16px;
     height: 16px;
@@ -292,6 +351,7 @@ header classes */
     width: 190px;
     height: 47px;
     margin-top: 20px;
+    color: #373867;
     background: #AACE9B;
     border-radius: 5px;
     font-family: 'Roboto';
@@ -305,6 +365,7 @@ header classes */
     width: 130px;
     height: 47px;
     margin-left: 30px;
+    color: #373867;
     background: #FFFFFF;
     border: 1px solid #373867;
     border-radius: 5px;
@@ -318,9 +379,10 @@ header classes */
 .about-us{
     display: inline-block;
     position: relative;
-    top: -350px;
+    top: -300px;
     width: 383px;
     height: 210px;
+    color: #373867;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -337,6 +399,12 @@ header classes */
 }
 .lists{
     width: 250px;
+    color: #373867;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
 }
 .lists:nth-child(2){
     margin-left: 160px;
