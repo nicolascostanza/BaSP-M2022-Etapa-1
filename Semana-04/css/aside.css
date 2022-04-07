@@ -1,0 +1,14 @@
+aside{
+    width: 20%;
+    height: auto;
+    margin-top: 53px;
+    background-color: #D9D9E2;
+}
+aside p{
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+}
+.menu-fixed{
+    position: fixed;
+    width: 20%;
+}

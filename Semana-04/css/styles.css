@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+.ppal{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main{
+    width: 80%;
+    padding-left: 3%;
+    margin-top: 53px;
+}
