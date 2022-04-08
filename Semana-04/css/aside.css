@@ -10,5 +10,5 @@ aside p{
 }
 .menu-fixed{
     position: fixed;
-    width: 20%;
+    /* width: 20%; */
 }

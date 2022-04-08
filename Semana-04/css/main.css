@@ -239,3 +239,25 @@ textarea::placeholder{
     line-height: 18px;
     text-align: center;
 }
+
+.about-us{
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-us > p{
+    min-width: 200px;
+    width: 45%;
+    margin-top: 7%;
+    height: 210px;
+    color: #373867;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+.img-rocket{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 70px;
+}
