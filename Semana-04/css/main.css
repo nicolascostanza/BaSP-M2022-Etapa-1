@@ -1,5 +1,5 @@
 main{
-    width: 70%;
+    width: 95%;
     padding-left: 3%;
     margin-top: 70px;
 }
@@ -276,4 +276,7 @@ textarea::placeholder{
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
+}
+.pruebamainfooter{
+    width: 70%;
 }

@@ -4,10 +4,11 @@
     padding: 2px 4px;
 }
 footer{
-    align-self: flex-end;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
+    /* flex-basis: 250px; */
     width: 100%;
     background-color: #D9D9E2;
 }
@@ -17,12 +18,14 @@ footer div p{
 .icons-social-media{
     display: flex;
     flex-wrap: nowrap;
+    width: 45%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    padding-left: 30%;
+    min-width: 230px;
 }
 .texto-footer{
-    padding-left: 30%;
+    text-align: center;
+    width: 55%;
     align-self: center;
     color: black;
     font-family: 'Roboto';
