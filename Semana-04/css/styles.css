@@ -7,4 +7,39 @@ body{
     display: flex;
     justify-content: flex-start;
 }
+@media only screen and (max-width: 780px) {
+    aside {
+      display: none;
+    }
+    .menu-gral{
+        display: none;
+    }
+    body{
+        width: 100%
+    }
+    .pruebamainfooter{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    /* a .hamburger-menu{
+        background-color: red;
+        width: auto;
+        visibility: visible;
+        color: white;
+        z-index: 2;
+    } */
+}
 
+@media only screen and (max-width: 600px) {
+    .election{
+        display: block;
+    }
+    footer > div{
+        margin: 0 auto;
+    }
+    /* .icons-social-media{
+        margin: 0 auto;
+    } */
+}

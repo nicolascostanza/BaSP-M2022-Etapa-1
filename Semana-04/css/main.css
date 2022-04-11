@@ -60,8 +60,13 @@ h4{
 }
 
 .img-watch{
-    width: 300px;
-    height: 300px;
+    margin-top: 80px;
+    margin-left: 3%;
+    width: 45%;
+    height: 45%;
+    object-fit: cover;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.6));
+    z-index: -1;
 }
 
 .main-text{
@@ -71,7 +76,7 @@ h4{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1em;
     line-height: 30px;
 }
 .secondary-text{
@@ -97,7 +102,7 @@ h4{
     border: solid 1px red;
     margin: 5px;
     width: 100%;
-    flex: 2 1 400px;
+    flex: 2 1 270px;
 }
 
 .text{
@@ -108,6 +113,12 @@ h4{
     flex-direction: row;
     flex-grow: 0;
     flex-wrap: nowrap;
+}
+.star{
+    top: 35px; 
+    color: #C4C4C4;
+    width: 64px;
+    height: 64px;
 }
 
 
@@ -267,6 +278,7 @@ textarea::placeholder{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    margin-bottom: 2%;
 }
 .lists-products, .lists-company, .lists-support{
     width: auto;
@@ -278,5 +290,6 @@ textarea::placeholder{
     line-height: 18px;
 }
 .pruebamainfooter{
-    width: 70%;
+    width: 80%;
+
 }

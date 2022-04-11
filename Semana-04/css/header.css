@@ -1,12 +1,11 @@
 header{
     width: 100%;
-    position: fixed;
     background-color: #373867;
     height: 3em;
     padding-top: 5px;
 }
 .hamburger-menu{
-    display: none;
+    visibility: hidden;
 }
 .header-radium{
     padding-left: 20px;

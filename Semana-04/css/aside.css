@@ -1,18 +1,16 @@
 aside{
     display: flex;
     flex-direction: column;
-    width: 30%;
-    margin-top: 53px;
+    width: 25%;
 }
 aside p{
     color: #373867;
     font-family: 'Roboto', sans-serif;
 }
-.menu-fixed{
-    position: fixed;
+.menu-gral{
     background-color: #D9D9E2;
     height: 100%;
-    width: 30%;
+    width: 100%;
 }
 aside p{
     color: #373867;
