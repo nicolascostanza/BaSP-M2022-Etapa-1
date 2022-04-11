@@ -18,13 +18,11 @@
     </head>
     <body>
         <header>
-            <span>
-                <a class="hamburger-menu" href="">&#x2630</a>
-                <a href="#">
-                    <span class="header-radium">Radium</span>
-                    <span class="header-rocket">Rocket</span>
-                </a>
-            </span>
+            <span class="hamburger-menu">&#x2630</span>
+            <a class="tittle-header" href="#">
+                <span class="header-radium">Radium</span>
+                <span class="header-rocket">Rocket</span>
+            </a>
         </header>
         <div class="ppal">
             <aside>
@@ -42,26 +40,27 @@
                         We provide 24-hour support
                     </p>
                     <address>
-                        <ul class="datos">
+                        <ul>
                             <li>
-                                <img src="./assets/img/mail.png" alt="trangenix"> contact@trackgenix.com
+                                <img src="./assets/img/mail.png" alt="trangenix"><p class="text-contact">contact@trackgenix.com</p>
                             </li>
                             <li>
-                                <img src="./assets/img/mail.png" alt="trangenix"> +1 555-000-555
+                                <img src="./assets/img/mail.png" alt="trangenix"> <p class="text-contact">+1 555-000-555</p>
                             </li>
                             <li>
-                                <img src="./assets/img/direction.png" alt="trangenix"> 1234 Somewhere Road #8254
+                                <img src="./assets/img/direction.png" alt="trangenix"> <p class="text-contact">1234 Somewhere Road #8254</p>
                             </li>
-                            <li>Nashville, TN 00000-0000</li>
+                            <li><p class="text-contact">Nashville, TN 00000-0000</p></li>
                         </ul>   
                     </address>
                 </div>
             </aside>
-            <div class="pruebamainfooter">
+            <div class="mainfooter">
                 <main>
                     <section class="first-section">
                         <div class="main-section">
                             <h1>Trackgenix</h1>
+                            <img class="img-watch-mobile margin-photo" src="./assets/img/reloj.jpg" alt="Reloj">
                             <p class="main-text">
                                 Trangenix is a company specialized in custom systems development. Extensive experience in 
                                 analysis, design and development of systems, websites and mobile apps. With more than 20 years 
@@ -74,7 +73,9 @@
                                 concrete solutions for specific problems, always based on agile development methodologies.
                             </p>
                         </div>
-                        <img class="img-watch" src="./assets/img/reloj.jpg" alt="Reloj">
+                        <div class="margin-photo">
+                            <img class="img-watch-desktop" src="./assets/img/reloj.jpg" alt="Reloj">
+                        </div>
                     </section>
                     <h2>Functionalities</h2>
                     <section class="information-section">
@@ -181,7 +182,7 @@
                     </section>
                     <div class="separator"></div>
                     <h2>Ask for information</h2>
-                    <section class="formulario">
+                    <section>
                         <form>
                             <div class="formulario-info-user">
                                 <input class="personal-information" type="name" placeholder="Name">

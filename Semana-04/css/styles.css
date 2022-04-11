@@ -1,45 +1,146 @@
 body{
     display: flex;
     flex-direction: column;
+    font-size: 16px;
 }
 .ppal{
     width: 100%;
     display: flex;
     justify-content: flex-start;
 }
+
+/* aca voyu poniendo lo de flex */
+/* header */
+header{
+    display: flex;
+}
+.hamburger-menu{
+    display: none;
+}
+.tittle-header{
+    display: flex;
+}
+/* ASIDE */
+aside{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+ul li{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* main */
+main{
+    flex: 5;
+}
+.first-section{
+    display: flex;
+}
+.img-watch-mobile{
+    display: none;
+}
+.information-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.group{
+    flex: 2 1 270px;
+}
+.subtext-rigth{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-wrap: nowrap;
+}
+.formulario-info-user{
+    display: flex;
+    justify-content: flex-start;
+    flex: 0 0 300px;
+    flex-wrap: wrap;
+}
+.personal-information{
+    flex: 1 2 215px;
+}
+.election{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.contact{
+    display: flex;
+    justify-content: flex-start;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+.about-us{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.lists{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+/* footer */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.texto-footer{
+    align-self: center;
+}
 @media only screen and (max-width: 780px) {
+    body{
+        font-size: 13px;
+        width: 100%
+    }
     aside {
       display: none;
     }
     .menu-gral{
         display: none;
     }
-    body{
-        width: 100%
+    .img-watch-mobile{
+        display: none;
     }
-    .pruebamainfooter{
-        width: 100%;
+    .mainfooter{
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    /* a .hamburger-menu{
-        background-color: red;
-        width: auto;
-        visibility: visible;
-        color: white;
-        z-index: 2;
-    } */
+    .hamburger-menu{
+        display: inline-block;
+        color: #ffffff;
+        font-size: 2.5em;
+        padding-left: 0.625em;
+        padding-bottom: 30px;
+    }
+    .first-section, .main-section{
+        width: 100%;
+    }
 }
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .election{
         display: block;
     }
     footer > div{
         margin: 0 auto;
     }
-    /* .icons-social-media{
-        margin: 0 auto;
-    } */
+    .img-watch-mobile{
+        display: block;
+    }
+    .img-watch-desktop{
+        display: none;
+    }
+    .separator{
+        width: 70vw;
+    }
 }

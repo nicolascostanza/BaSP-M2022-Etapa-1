@@ -1,16 +1,17 @@
 header{
-    width: 100%;
+    width: auto;
     background-color: #373867;
     height: 3em;
-    padding-top: 5px;
+    padding-top: 0.3125em;
+    padding-bottom: 0.2em;
 }
-.hamburger-menu{
-    visibility: hidden;
+header a:nth-child(2){
+    text-decoration: none;
 }
 .header-radium{
     padding-left: 20px;
     color: #49A37B;
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -18,11 +19,8 @@ header{
 .header-rocket{
     padding: 10px 0 10px -20px;
     color: #AACE9B;
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: lighter;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-}
-header a:nth-child(2){
-    text-decoration: none;
 }

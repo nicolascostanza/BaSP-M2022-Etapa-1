@@ -27,4 +27,16 @@
 
 ◉Organize element tags, classes and IDs in css
 
+### Week 4
+
+◉I made a diagram on paper and I was iterating on the division of smaller and smaller boxes thinking what flex properties would serve me in each case
+
+◉Create necessary divs for the flexbox implementation and rearrange the html structure as desired
+
+◉Apply flexbox using many borders to guide me
+
+◉Once it was working fine i implemented the styling in px and introduced the media queries
+
+◉then I put body with font-size of 16px for desktop and tables. And 13px for mobile. Change all measurements from PX to EM
+
 ** Author: Nicolas Costanza**

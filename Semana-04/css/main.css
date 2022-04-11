@@ -1,22 +1,20 @@
 main{
-    width: 95%;
     padding-left: 3%;
     margin-top: 70px;
 }
-
 h1{
-    width: 322px;
-    height: 44px;
+    width: auto;
+    height: auto;
     margin-bottom: 40px;
     color: #373867;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 3.75em;
     line-height: 70px;
 }
 h2{
-    width: 800px;
+    width: auto;
     height: 35px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -24,11 +22,10 @@ h2{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 1.875em;
     line-height: 35px;
 }
 h3{
-    display: inline-block;
     width: auto;
     height: 23px;
     padding-left: 20px;
@@ -36,39 +33,64 @@ h3{
     color: #373867;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 500;
     line-height: 23px;
 }
 h4{
-    display: inline-block;
-    width: 90px;
+    width: auto;
     height: 16px;
     margin-bottom: 15px;
     color: #373867;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 700;
     line-height: 16px;
 }
+/* form */
+label{
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.875em;
+    line-height: 16px;
+    padding-left: 10px;
+}
+textarea{
+    width: 95%;
+    height: 110px;
+    margin-top: 0.2%;
+    margin-bottom: 10px;
+    border: solid #373867 1px;
+    border-radius: 5px;
+}
+textarea::placeholder{
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 0.8125em;
+    font-weight: 400;
+    line-height: 15px;
+}
 /* primera seccion */
 .first-section{
-    display: flex;
     width: 100%;
 }
 .main-section{
     width: 50%;
 }
-
-.img-watch{
-    margin-top: 80px;
+.img-watch-desktop, .img-watch-mobile{
+    margin: 0 10px;
     margin-left: 3%;
-    width: 45%;
-    height: 45%;
+    width: 15.625em;
+    height: 24em;
     object-fit: cover;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.6));
     z-index: -1;
 }
-
+.margin-photo{
+    margin: 0 auto;
+}
 .main-text{
     margin-top: 10%;
     margin-bottom: 5%;
@@ -84,44 +106,29 @@ h4{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.25em;
+    line-height: 1.875em;
     margin-bottom: 5%;
 }
-
 /* funcionalitis */
 .information-section{
     margin-right: 2%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     border: solid 1px black;
 }
-
 .group{
-    border: solid 1px red;
-    margin: 5px;
     width: 100%;
-    flex: 2 1 270px;
-}
-
-.text{
-    padding-left: 20px;
-}
-.subtext-rigth{
-    display: flex;
-    flex-direction: row;
-    flex-grow: 0;
-    flex-wrap: nowrap;
+    margin: 5px;
+    border: solid 1px red;
 }
 .star{
-    top: 35px; 
-    color: #C4C4C4;
     width: 64px;
     height: 64px;
+    color: #C4C4C4;
 }
-
-
+.text{
+    padding-left: 20px;
+    color: #373867;
+}
 .separator{
     width: 85%;
     height: 2px;
@@ -130,45 +137,13 @@ h4{
     background: #373867;
     border-radius: 10px;
 }
-
-
-/* FORM */
-
-
-.formulario-info-user{
-    display: flex;
-    justify-content: flex-start;
-    flex: 0 0 300px;
-    flex-wrap: wrap;
-}
-
+/* form */
 .personal-information{
-    min-width: 235px;
     width: 45%;
     height: 25px;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 10px 5px 0;
     border: solid #373867 1px;
     border-radius: 5px;
-}
-
-.personal-information::placeholder{
-    padding-left: 10px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-}
-label{
-    color: #373867;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    padding-left: 10px;
 }
 .title-form{
     margin: 5px 0 10px 0;
@@ -176,64 +151,44 @@ label{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.875em;
     line-height: 16px;
 }
-
 .election{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    width: 95%;
     margin-right: 20px;
     margin-bottom: 15px;
-    width: 95%;
 }
 .contact{
-    display: flex;
-    justify-content: flex-start;
-    /* min-width: 235px; */
-    /* width: auto; */
+    margin: 5px 0;
+}
+.personal-information::placeholder{
+    padding-left: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 16px;
 }
 .input-radio{
     width: 16px;
     height: 16px;
 }
-
-textarea{
-    width: 95%;
-    height: 110px;
-    margin-top: 0.2%;
-    margin-bottom: 10px;
-    border: solid #373867 1px;
-    border-radius: 5px;
-}
-textarea::placeholder{
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 15px;
-}
-
 .buttons{
-    display: flex;
     width: 95%;
-    justify-content: flex-end;
 }
-
 .btn-send{
     padding: 10px;
     height: 47px;
     color: #373867;
     background: #AACE9B;
     border-radius: 5px;
+    text-align: center;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 19px;
-    text-align: center;
 }
 .btn-reset{
     padding: 10px 25px;
@@ -243,31 +198,25 @@ textarea::placeholder{
     background: #FFFFFF;
     border: 1px solid #373867;
     border-radius: 5px;
+    text-align: center;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 0.9375em;
     line-height: 18px;
-    text-align: center;
-}
-
-.about-us{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 .about-us > p{
     min-width: 300px;
     width: 45%;
-    margin-top: 7%;
     height: auto;
+    margin-top: 7%;
+    margin-bottom: 5%;
     color: #373867;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25em;
     line-height: 30px;
-    margin-bottom: 5%;
 }
 .img-rocket{
     width: 300px;
@@ -275,9 +224,6 @@ textarea::placeholder{
     margin-bottom: 3%;
 }
 .lists{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
     margin-bottom: 2%;
 }
 .lists-products, .lists-company, .lists-support{
@@ -286,10 +232,6 @@ textarea::placeholder{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.75em;
     line-height: 18px;
-}
-.pruebamainfooter{
-    width: 80%;
-
 }

@@ -1,19 +1,6 @@
-.linkedin img, .facebook img, .twitter img, .whatsapp img{
-    width: 50px;
-    height: 50px;
-    padding: 2px 4px;
-}
 footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    /* flex-basis: 250px; */
     width: 100%;
     background-color: #D9D9E2;
-}
-footer div p{
-    align-self: center;
 }
 .icons-social-media{
     display: flex;
@@ -23,11 +10,15 @@ footer div p{
     padding-bottom: 0.5%;
     min-width: 230px;
 }
+.linkedin img, .facebook img, .twitter img, .whatsapp img{
+    width: 50px;
+    height: 50px;
+    padding: 2px 4px;
+}
 .texto-footer{
-    text-align: center;
     width: 55%;
-    align-self: center;
     color: black;
+    text-align: center;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
