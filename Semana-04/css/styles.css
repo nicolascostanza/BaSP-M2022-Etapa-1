@@ -3,21 +3,8 @@ body{
     flex-direction: column;
     font-size: 16px;
 }
-.ppal{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-}
-
-/* aca voyu poniendo lo de flex */
-/* header */
+/* HEADER */
 header{
-    display: flex;
-}
-.hamburger-menu{
-    display: none;
-}
-.tittle-header{
     display: flex;
 }
 /* ASIDE */
@@ -30,11 +17,31 @@ ul li{
     display: flex;
     flex-wrap: wrap;
 }
-
-/* main */
+/* MAIN */
 main{
     flex: 5;
 }
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/* classes */
+.ppal{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+/* header classes */
+.hamburger-menu{
+    display: none;
+}
+.tittle-header{
+    display: flex;
+}
+/* main classes */
 .first-section{
     display: flex;
 }
@@ -87,16 +94,12 @@ main{
     flex-wrap: nowrap;
     justify-content: space-between;
 }
-/* footer */
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
+/* footer classes*/
 .texto-footer{
     align-self: center;
 }
+/* MEDIA QUERIES */
+/* TABLET */
 @media only screen and (max-width: 780px) {
     body{
         font-size: 13px;
@@ -127,7 +130,8 @@ footer{
         width: 100%;
     }
 }
-@media only screen and (max-width: 480px) {
+/* MOBILE */
+@media only screen and (max-width: 600px) {
     .election{
         display: block;
     }
