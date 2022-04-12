@@ -5,15 +5,14 @@ footer{
 .icons-social-media{
     display: flex;
     flex-wrap: nowrap;
-    width: 45%;
-    padding-top: 0.5%;
+    padding: 0.5% 0;
     padding-bottom: 0.5%;
     min-width: 230px;
 }
 .linkedin img, .facebook img, .twitter img, .whatsapp img{
     width: 50px;
     height: 50px;
-    padding: 2px 4px;
+    padding: 5px 10px;
 }
 .texto-footer{
     width: 55%;

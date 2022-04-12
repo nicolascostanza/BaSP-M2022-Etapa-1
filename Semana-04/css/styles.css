@@ -147,4 +147,7 @@ footer{
     .separator{
         width: 70vw;
     }
+    .about-us{
+        flex-direction: column;
+    }
 }
