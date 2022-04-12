@@ -47,7 +47,7 @@ main{
     justify-content: center;
 }
 .group{
-    flex: 2 1 270px;
+    flex: 2 1 325px;
 }
 .subtext-rigth{
     display: flex;

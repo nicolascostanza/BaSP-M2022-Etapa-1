@@ -51,16 +51,16 @@ address ul li{
     margin: 10% 0 0 8%;
     border-bottom: 3px solid #AACE9B;
     color: #373867;
-    font-size: 1.5625em;
+    font-size: 1.7vw;
     font-family: 'Roboto', sans-serif;
 }
 .contact-us {
-    width: 125px;
+    width: 105px;
 }
 .contact-us-subtext{
     margin: 3% 0 3% 10%;
 }
 .text-contact{
     padding-left: 0.3125em;
-    font-size: 0.875em;
+    font-size: 1vw;
 }
