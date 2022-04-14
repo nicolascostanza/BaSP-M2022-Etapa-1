@@ -39,4 +39,12 @@
 
 ◉then I put body with font-size of 16px for desktop and tables. And 13px for mobile. Change all measurements from PX to EM
 
-** Author: Nicolas Costanza**
+GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-04/index.html
+
+### Week 4
+
+◉Modularize each exercise to be able to have a greater understanding and thus attack the problems easily, try to implement all the knowledge provided this week
+
+GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-05/index.html
+
+Author: Nicolas Costanza
