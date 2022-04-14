@@ -121,10 +121,6 @@ footer{
     }
     .hamburger-menu{
         display: inline-block;
-        color: #ffffff;
-        font-size: 2.5em;
-        padding-left: 0.625em;
-        padding-bottom: 30px;
     }
     .first-section, .main-section{
         width: 100%;
