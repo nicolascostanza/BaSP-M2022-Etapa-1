@@ -1,6 +1,3 @@
-main{
-    margin: 0 3%;
-}
 h1{
     width: auto;
     height: auto;
@@ -64,6 +61,7 @@ textarea::placeholder{
 }
 /* primera seccion */
 .main-index{
+    margin: 0 3%;
     margin-top: 70px;
 }
 .first-section{
