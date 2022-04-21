@@ -1,6 +1,5 @@
 main{
     margin: 0 3%;
-    margin-top: 70px;
 }
 h1{
     width: auto;
@@ -47,15 +46,6 @@ h4{
     line-height: 16px;
 }
 /* form */
-label{
-    color: #373867;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.875em;
-    line-height: 16px;
-    padding-left: 10px;
-}
 textarea{
     width: 95%;
     height: 110px;
@@ -73,6 +63,9 @@ textarea::placeholder{
     line-height: 15px;
 }
 /* primera seccion */
+.main-index{
+    margin-top: 70px;
+}
 .first-section{
     width: 100%;
 }
@@ -132,6 +125,15 @@ textarea::placeholder{
     border-radius: 10px;
 }
 /* form */
+.label-index{
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.875em;
+    line-height: 16px;
+    padding-left: 10px;
+}
 .personal-information{
     width: 45%;
     height: 25px;
