@@ -18,6 +18,7 @@ date.addEventListener("blur", dateBlur);
 phone.addEventListener("blur", phoneBlur);
 address.addEventListener("blur", addressBlur);
 locationsingup.addEventListener("blur", locationBlur);
+postal.addEventListener("blur", postalBlur);
 // objeto
 var validation = {
     name: false,
@@ -27,23 +28,18 @@ var validation = {
 
 // area de trabajo para las funciones 
 
-function locationBlur () {
-    let locationValue = locationsingup.value;
-    if (locationValue.length < 4) {
-        console.log("mal, debe tener mas de 3 letras");
-    }
-    let espaces = 0
-    for (let i = 0; i < locationValue.length; i++) {
-        letra = locationValue.substring(i,i+1);
-        let ascii = letra.charCodeAt();
-
-        if (ascii === 32) {
-            // console.log("caracter que no es letra: " + ascii);
-            espaces += 1;
+function postalBlur () {
+    let postalValue = postal.value;
+    console.log(postalValue.length);
+    
+    if(postalValue == Number(postalValue)){
+        if( postalValue.length == 4 || postalValue.length == 5 ){
+            console.log("bien ingresado los numeros");
+        } else {
+            console.log("ingrese entre 4 o 5 numero");
         }
-    }
-    if(espaces > 0) {
-        console.log("Error. No debe contener espacio, solo caracteres alfanumericos");
+    }else {
+        console.log("ingrese solo numeros");
     }
 }
 
@@ -194,4 +190,24 @@ function addressBlur () {
     console.log("letras: " + letrita);
     console.log("numeros: " + contNumber);
     
+}
+
+function locationBlur () {
+    let locationValue = locationsingup.value;
+    if (locationValue.length < 4) {
+        console.log("mal, debe tener mas de 3 letras");
+    }
+    let espaces = 0
+    for (let i = 0; i < locationValue.length; i++) {
+        letra = locationValue.substring(i,i+1);
+        let ascii = letra.charCodeAt();
+
+        if (ascii === 32) {
+            // console.log("caracter que no es letra: " + ascii);
+            espaces += 1;
+        }
+    }
+    if(espaces > 0) {
+        console.log("Error. No debe contener espacio, solo caracteres alfanumericos");
+    }
 }
