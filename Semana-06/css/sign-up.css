@@ -36,9 +36,20 @@ main{
     margin: 0 auto;
     background-color: #C9C9D6;
 }
+.div-int{
+    width: 95%;
+}
+.last-div{
+    width: 47.5%;
+    display: flex;
+    flex-direction: column;
+}
+.last-div > label{
+     text-align: left;
+}
 div{
     width: 45%;
-    margin: 0.3em 0.3em;
+    margin: 0.3em 0;
 }
 form{
     display: flex;
@@ -133,4 +144,10 @@ h3{
     .btn-create, .btn-cancel{
         width: 90%;
     }
+    .last-div{
+        width: 95%;
+    }
+    .last-div > label{
+        width: 100%;
+   }
 }

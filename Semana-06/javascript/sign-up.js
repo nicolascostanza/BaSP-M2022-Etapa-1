@@ -4,7 +4,7 @@ let dni = document.getElementById("dni");
 let date = document.getElementById("date");
 let phone = document.getElementById("phone");
 let address = document.getElementById("address");
-// let location = document.getElementById("location");
+let locationsingup = document.getElementById("location");
 let postal = document.getElementById("postal");
 let email = document.getElementById("email");
 let password = document.getElementById("password");
@@ -15,6 +15,7 @@ surname.addEventListener("blur", surnameBlur);
 dni.addEventListener("blur", dniBlur);
 date.addEventListener("blur", dateBlur);
 phone.addEventListener("blur", phoneBlur);
+locationsingup.addEventListener("blur", locationBlur);
 // objeto
 var validation = {
     name: false,
@@ -24,7 +25,11 @@ var validation = {
 
 // area de trabajo para las funciones 
 
-
+function locationBlur () {
+    let locationValue = locationsingup.value;
+    
+    
+}
 
 // terminados y para limpiar codigo
 
