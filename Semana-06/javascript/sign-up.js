@@ -11,7 +11,7 @@ var password = document.getElementById("password");
 var passwordRepeat = document.getElementById("passwordRepeat");
 var checkedPW;
 // prueba
-
+// sacar los var p
 // events
 nombre.addEventListener("blur", nameBlur);
 nombre.addEventListener("focus", nameFocus);
@@ -20,9 +20,13 @@ surname.addEventListener("focus", surnameFocus);
 dni.addEventListener("blur", dniBlur);
 dni.addEventListener("focus", dniFocus);
 date.addEventListener("blur", dateBlur);
+date.addEventListener("focus", dateFocus);
 phone.addEventListener("blur", phoneBlur);
+phone.addEventListener("focus", phoneFocus);
 address.addEventListener("blur", addressBlur);
+address.addEventListener("focus", addressFocus);
 locationsingup.addEventListener("blur", locationBlur);
+locationsingup.addEventListener("focus", locationFocus);
 postal.addEventListener("blur", postalBlur);
 email.addEventListener("blur", emailBlur);
 password.addEventListener("blur", passwordBlur);
@@ -105,12 +109,12 @@ function dniBlur () {
             }
         }
         if (validateDni){
-            var p = document.getElementById("dniErrorCaracter");
+            p = document.getElementById("dniErrorCaracter");
             p.classList.replace("hidden", "active");
             dni.classList.add("borderWarning");
         } else {
-            var px = document.getElementById("dniErrorCaracter");
-            px.classList.replace("active", "hidden");
+            p = document.getElementById("dniErrorCaracter");
+            p.classList.replace("active", "hidden");
             dni.classList.replace("borderWarning", "borderSuccess");
         }
     }
@@ -127,21 +131,33 @@ function dateBlur () {
     month = Number(month);
     year = Number(year);
     if(day < 1 || day > 31){
-        console.log("mal el dia");
+        var p = document.getElementById("dateError");
+        p.classList.replace("hidden", "active");
+        date.classList.add("borderWarning");
     } else if (month < 1 || month > 12) {
-        console.log("mal el mes");
+        var p = document.getElementById("dateError");
+        p.classList.replace("hidden", "active");
+        date.classList.add("borderWarning");
     } else if (year < 1900 || year > 2022 || year != Number(year)) {
-        console.log("mal el año");
+        var p = document.getElementById("dateError");
+        p.classList.replace("hidden", "active");
+        date.classList.add("borderWarning");
     } else if(check1 != '/' || check2 != '/'){
-        console.log("MAL. formato dd/mm/yyyy");
+        var p = document.getElementById("dateError");
+        p.classList.replace("hidden", "active");
+        date.classList.add("borderWarning");
     } else {
-        console.log("bien papaaaa");
+        p = document.getElementById("dateError");
+        p.classList.replace("active", "hidden");
+        date.classList.replace("borderWarning", "borderSuccess");
     }
 }
 
 function phoneBlur () {
     var phoneValue = phone.value;
     if(phoneValue.length == 10){
+        p = document.getElementById("phoneErrorLength");
+        p.classList.replace("active", "hidden");
         var validatePhone = false
         for (var i = 0; i < phoneValue.length; i++) {
             var numberPhone = phoneValue.substring(i,i+1);
@@ -152,22 +168,37 @@ function phoneBlur () {
         }
         if (validatePhone){
             console.log("Error, debe contener solo numeros");
+            p = document.getElementById("phoneErrorCaracter");
+            p.classList.replace("hidden", "active");
+            phone.classList.add("borderWarning");
         } else {
-            console.log("telefono ingresado bien");
+            p = document.getElementById("phoneErrorCaracter");
+            p.classList.replace("active", "hidden");
+            phone.classList.replace("borderWarning", "borderSuccess");
         }
     }else {
-        console.log("mal, debe contener 10 numeros");
+        var p = document.getElementById("phoneErrorLength");
+        p.classList.replace("hidden", "active");
+        phone.classList.add("borderWarning");
     }
 }
 
 function addressBlur () {
     var addressValue = address.value;
     if (addressValue.length < 5){
-        console.log("error se requieren mas caracteres");
+        var p = document.getElementById("addressErrorLength");
+        p.classList.replace("hidden", "active");
+        address.classList.add("borderWarning");
     } else {
+        var p = document.getElementById("addressErrorLength");
+        p.classList.replace("active", "hidden");
         if (addressValue.indexOf(" ") === -1){
-            console.log("no hay espacios");
+            var p = document.getElementById("addressErrorSpace");
+            p.classList.replace("hidden", "active");
+            address.classList.add("borderWarning");
         } else {
+            var p = document.getElementById("addressErrorSpace");
+            p.classList.replace("active", "hidden");
             var letterAddress = 0;
             var numberAddress = 0;
             var spacesAddress = 0;
@@ -183,11 +214,19 @@ function addressBlur () {
                 }
             }
             if(letterAddress == 0 || numberAddress == 0){
-                console.log("Error. Debe contener letras y numeros");
+                var p = document.getElementById("addressErrorCaracter");
+                p.classList.replace("hidden", "active");
+                address.classList.add("borderWarning");
             } else if(letterAddress + numberAddress + spacesAddress == addressValue.length){
-                console.log("bien ingresado");
+                p = document.getElementById("addressErrorCaracter");
+                p.classList.replace("active", "hidden");
+                var p2 = document.getElementById("addressErrorCaracterSpecial");
+                p2.classList.replace("active", "hidden");
+                address.classList.replace("borderWarning", "borderSuccess");
             } else {
-                console.log("Error. Contiene caracteres especiales");
+                var p = document.getElementById("addressErrorCaracterSpecial");
+                p.classList.replace("hidden", "active");
+                address.classList.add("borderWarning");
             }
         }
     }
@@ -196,8 +235,12 @@ function addressBlur () {
 function locationBlur () {
     var locationValue = locationsingup.value;
     if (locationValue.length < 4) {
-        console.log("mal, debe tener mas de 3 letras");
+        var p = document.getElementById("locationErrorLength");
+        p.classList.replace("hidden", "active");
+        locationsingup.classList.add("borderWarning");
     } else {
+        var p = document.getElementById("locationErrorLength");
+        p.classList.replace("active", "hidden");
         var spacesLocation = 0
         var lettersLocation = 0;
         var numberLocation = 0;
@@ -213,9 +256,13 @@ function locationBlur () {
             }
         }
         if(spacesLocation + numberLocation + lettersLocation != locationValue.length) {
-            console.log("Error. No debe contener espacio, solo caracteres alfanumericos");
+            p = document.getElementById("addressErrorCaracter");
+            p.classList.replace("hidden", "active");
+            locationsingup.classList.add("borderWarning");
         } else {
-            console.log("bien ingresado correctamente");
+            p = document.getElementById("addressErrorCaracter");
+            p.classList.replace("active", "hidden");
+            locationsingup.classList.replace("borderWarning", "borderSuccess");
         }
     }
 }
@@ -309,16 +356,45 @@ function nameFocus () {
 }
 
 function surnameFocus () {
-    var p3 = document.getElementById("surnameErrorLength");
-    var p4 = document.getElementById("surnameErrorCaracter");
+    p = document.getElementById("surnameErrorLength");
+    p2 = document.getElementById("surnameErrorCaracter");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
+}
+
+function dniFocus () {
+    p = document.getElementById("dniErrorLength");
+    p2 = document.getElementById("dniErrorCaracter");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
+}
+
+function dateFocus () {
+    p = document.getElementById("dateError");
+    p.classList.replace("active", "hidden");
+}
+
+function phoneFocus () {
+    p = document.getElementById("phoneErrorLength");
+    p2 = document.getElementById("phoneErrorCaracter");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
+}
+
+function addressFocus () {
+    p = document.getElementById("addressErrorLength");
+    p2 = document.getElementById("addressErrorSpace");
+    p3 = document.getElementById("addressErrorCaracter");
+    p4 = document.getElementById("addressErrorCaracterSpecial");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
     p3.classList.replace("active", "hidden");
     p4.classList.replace("active", "hidden");
 }
 
-function dniFocus(){
-    var p5 = document.getElementById("dniErrorLength");
-    var p6 = document.getElementById("dniErrorCaracter");
-    p5.classList.replace("active", "hidden");
-    p6.classList.replace("active", "hidden");
+function locationFocus () {
+    p = document.getElementById("locationErrorLength");
+    p2 = document.getElementById("locationErrorCaracter");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
 }
-

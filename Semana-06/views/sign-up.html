@@ -46,18 +46,28 @@
                 <div>
                     <label>Date of birth</label>
                     <input id="date" type="text" placeholder="Date of birth">
+                    <p id="dateError" class="hidden">Error dd/mm/yyyy</p>
                 </div>
                 <div>
                     <label>Phone</label>
                     <input id="phone" type="text" placeholder="Phone">
+                    <p id="phoneErrorLength" class="hidden">Error ingrese 10 numeros</p>
+                    <p id="phoneErrorCaracter" class="hidden">Error Ingrese solo numeros</p>
                 </div>
                 <div>
                     <label>Address</label>
                     <input id="address" type="text" placeholder="Address">
+                    <p id="addressErrorLength" class="hidden">Error minimo 5 caracteres</p>
+                    <p id="addressErrorSpace" class="hidden">Error Debe contener espacio</p>
+                    <p id="addressErrorCaracter" class="hidden">Error ingrese numeros y letras</p>
+                    <p id="addressErrorCaracterSpecial" class="hidden">Error no ingrese caracteres especiales</p>
                 </div>
                 <div>
                     <label>Location</label>
                     <input id="location" type="text" placeholder="Location">
+                    <p id="locationErrorLength" class="hidden">Error minimo 3 caracteres</p>
+                    <p id="locationErrorCaracter" class="hidden">Error Solo texto alfanumerico</p>
+                    <!-- <p id="locationErrorcaracter" class="hidden">Error ingrese numeros y letras</p> -->
                 </div>
                 <div>
                     <label>Postal Code</label>
