@@ -5,6 +5,7 @@ main{
     background-color: #C9C9D6;
 }
 div{
+    margin-top: 10px;
     width: 90%;
 }
 .email-login, .password-login{
@@ -23,6 +24,7 @@ form{
     margin: 10vh 0;
     background: #FFFFFF;
     border-radius: 15px;
+    text-align: center;
 }
 .buttons{
     width: 95%;
@@ -51,6 +53,7 @@ form{
     border: solid grey 1px;
     width: 45%;
     height: 45px;
+    color: #373867;
     border-radius: 5px;
     text-align: center;
     font-family: 'Roboto';
@@ -60,7 +63,7 @@ form{
     line-height: 19px;
 }
 label{
-    text-align: center;
+    /* text-align: center; */
     color: #373867;
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -143,15 +146,9 @@ h3{
     line-height: 29px;
 }
 @media only screen and (max-width: 480px) {
-    /* form{
-        flex-direction: column;
-        justify-content: center;
-    }
-    div{
-        margin: 0 auto;
-        align-items: center;
-        width: 90%;
-    } */
+    form{
+        min-width: 240px;
+    } 
     .buttons{
         flex-direction: column;
     }
