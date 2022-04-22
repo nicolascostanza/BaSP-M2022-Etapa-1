@@ -19,6 +19,7 @@ phone.addEventListener("blur", phoneBlur);
 address.addEventListener("blur", addressBlur);
 locationsingup.addEventListener("blur", locationBlur);
 postal.addEventListener("blur", postalBlur);
+email.addEventListener("blur", emailBlur);
 // objeto
 var validation = {
     name: false,
@@ -28,18 +29,14 @@ var validation = {
 
 // area de trabajo para las funciones 
 
-function postalBlur () {
-    let postalValue = postal.value;
-    console.log(postalValue.length);
-    
-    if(postalValue == Number(postalValue)){
-        if( postalValue.length == 4 || postalValue.length == 5 ){
-            console.log("bien ingresado los numeros");
-        } else {
-            console.log("ingrese entre 4 o 5 numero");
-        }
-    }else {
-        console.log("ingrese solo numeros");
+function emailBlur () {
+    let emailValue = email.value;
+    var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    var respuestaExpReg = expReg.test(emailValue);
+    if(respuestaExpReg){
+        console.log("buen email");
+    } else {
+        console.log("mal email :c");
     }
 }
 
@@ -209,5 +206,20 @@ function locationBlur () {
     }
     if(espaces > 0) {
         console.log("Error. No debe contener espacio, solo caracteres alfanumericos");
+    }
+}
+
+function postalBlur () {
+    let postalValue = postal.value;
+    console.log(postalValue.length);
+    
+    if(postalValue == Number(postalValue)){
+        if( postalValue.length == 4 || postalValue.length == 5 ){
+            console.log("bien ingresado los numeros");
+        } else {
+            console.log("ingrese entre 4 o 5 numero");
+        }
+    }else {
+        console.log("ingrese solo numeros");
     }
 }
