@@ -28,8 +28,11 @@ address.addEventListener("focus", addressFocus);
 locationsingup.addEventListener("blur", locationBlur);
 locationsingup.addEventListener("focus", locationFocus);
 postal.addEventListener("blur", postalBlur);
+postal.addEventListener("focus", postalFocus);
 email.addEventListener("blur", emailBlur);
+email.addEventListener("focus", emailFocus);
 password.addEventListener("blur", passwordBlur);
+password.addEventListener("focus", passwordFocus);
 passwordRepeat.addEventListener("blur", passwordRepeatBlur);
 
 // area de trabajo para las funciones 
@@ -167,7 +170,6 @@ function phoneBlur () {
             }
         }
         if (validatePhone){
-            console.log("Error, debe contener solo numeros");
             p = document.getElementById("phoneErrorCaracter");
             p.classList.replace("hidden", "active");
             phone.classList.add("borderWarning");
@@ -270,13 +272,21 @@ function locationBlur () {
 function postalBlur () {
     var postalValue = postal.value;
     if(postalValue == Number(postalValue)){
+        var p = document.getElementById("postalErrorLength");
+        p.classList.replace("active", "hidden");
         if( postalValue.length == 4 || postalValue.length == 5 ){
-            console.log("bien ingresado los numeros");
+            p = document.getElementById("postalErrorCaracter");
+            p.classList.replace("active", "hidden");
+            postal.classList.replace("borderWarning", "borderSuccess");
         } else {
-            console.log("ingrese entre 4 o 5 numero");
+            p = document.getElementById("postalErrorCaracter");
+            p.classList.replace("hidden", "active");
+            postal.classList.add("borderWarning");
         }
     }else {
-        console.log("ingrese solo numeros");
+        var p = document.getElementById("postalErrorLength");
+        p.classList.replace("hidden", "active");
+        postal.classList.add("borderWarning");
     }
 }
 
@@ -285,9 +295,13 @@ function emailBlur () {
     var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     var respuestaExpReg = expReg.test(emailValue);
     if(respuestaExpReg){
-        console.log("buen email");
+        p = document.getElementById("emailError");
+        p.classList.replace("active", "hidden");
+        email.classList.replace("borderWarning", "borderSuccess");
     } else {
-        console.log("mal email :c");
+        var p = document.getElementById("emailError");
+        p.classList.replace("hidden", "active");
+        email.classList.add("borderWarning");
     }
 }
 
@@ -296,6 +310,8 @@ function passwordBlur () {
     var letterPassword = 0;
     var numberPasdword = 0
     if (passwordValue.length > 7){
+        p = document.getElementById("phoneErrorLength");
+        p.classList.replace("active", "hidden");
         for (let i = 0; i < passwordValue.length; i++) {
             var letterPass = passwordValue.substring(i,i+1);
             let ascii = letterPass.charCodeAt();
@@ -308,12 +324,19 @@ function passwordBlur () {
         } 
         if (letterPassword + numberPasdword === passwordValue.length){
             console.log("BIEN");
+            p = document.getElementById("passwordErrorCaracter");
+            p.classList.replace("active", "hidden");
+            password.classList.replace("borderWarning", "borderSuccess");
             // return checkedPW = password.value;
         } else {
-            console.log("solo permitidos caracteres alfanumericos");
+            p = document.getElementById("passwordErrorCaracter");
+            p.classList.replace("hidden", "active");
+            password.classList.add("borderWarning");
         }
     } else {
-        console.log("debe ingresar al menos 8 caracteres");
+        var p = document.getElementById("passwordErrorLength");
+        p.classList.replace("hidden", "active");
+        password.classList.add("borderWarning");
     }
 }
 
@@ -395,6 +418,25 @@ function addressFocus () {
 function locationFocus () {
     p = document.getElementById("locationErrorLength");
     p2 = document.getElementById("locationErrorCaracter");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
+}
+
+function postalFocus () {
+    p = document.getElementById("postalErrorLength");
+    p2 = document.getElementById("postalErrorCaracter");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
+}
+
+function emailFocus () {
+    p = document.getElementById("emailError");
+    p.classList.replace("active", "hidden");
+}
+
+function passwordFocus () {
+    p = document.getElementById("passwordErrorLength");
+    p2 = document.getElementById("passwordErrorCaracter");
     p.classList.replace("active", "hidden");
     p2.classList.replace("active", "hidden");
 }
