@@ -8,7 +8,7 @@
     display: none;
 }
 .active{
-    display: flex;
+    display: block;
     color: red;
 }
 label{

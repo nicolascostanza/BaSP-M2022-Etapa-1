@@ -25,7 +25,7 @@
         <main>
             <form>
                 <h1>Sign Up</h1>
-                <div id="divName">
+                <div>
                     <label>Name</label>
                     <input id="name" type="name" placeholder="Name">
                     <p id="nameErrorLength" class="hidden">Error ingrese mas de 3 caracteres</p>
@@ -34,10 +34,14 @@
                 <div>
                     <label>Surname</label>
                     <input id="surname" type="name" placeholder="Surname">
+                    <p id="surnameErrorLength" class="hidden">Error ingrese mas de 3 caracteres</p>
+                    <p id="surnameErrorCaracter" class="hidden">Error Ingrese solo caracteres</p>
                 </div>
                 <div>
                     <label>DNI</label>
                     <input id="dni" type="text" placeholder="DNI">
+                    <p id="dniErrorLength" class="hidden">Error ingrese mas de 7 numeros</p>
+                    <p id="dniErrorCaracter" class="hidden">Error Ingrese solo numeros</p>
                 </div>
                 <div>
                     <label>Date of birth</label>

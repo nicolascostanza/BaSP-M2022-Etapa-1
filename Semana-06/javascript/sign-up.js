@@ -16,7 +16,9 @@ var checkedPW;
 nombre.addEventListener("blur", nameBlur);
 nombre.addEventListener("focus", nameFocus);
 surname.addEventListener("blur", surnameBlur);
+surname.addEventListener("focus", surnameFocus);
 dni.addEventListener("blur", dniBlur);
+dni.addEventListener("focus", dniFocus);
 date.addEventListener("blur", dateBlur);
 phone.addEventListener("blur", phoneBlur);
 address.addEventListener("blur", addressBlur);
@@ -25,12 +27,6 @@ postal.addEventListener("blur", postalBlur);
 email.addEventListener("blur", emailBlur);
 password.addEventListener("blur", passwordBlur);
 passwordRepeat.addEventListener("blur", passwordRepeatBlur);
-// objeto
-// var validation = {
-//     name: false,
-//     surname: false,
-// }
-
 
 // area de trabajo para las funciones 
 
@@ -67,8 +63,12 @@ function nameBlur (){
 function surnameBlur (){
     var surnameValue = surname.value;
     if (surnameValue.length < 4){
-        console.log("Error. Debe contener mas de 3 caracteres");
+        var p = document.getElementById("surnameErrorLength");
+        p.classList.replace("hidden", "active");
+        surname.classList.add("borderWarning");
     } else {
+        var p = document.getElementById("surnameErrorLength");
+        p.classList.replace("active", "hidden");
         var validateSurname = false
         for (var i = 0; i < surnameValue.length; i++) {
             var letraSurname = surnameValue.substring(i,i+1);
@@ -78,9 +78,11 @@ function surnameBlur (){
             }
         }
         if(validateSurname){
-            console.log("Error. Debe ingresar solo Letras");
+            var p = document.getElementById("surnameErrorCaracter");
+            p.classList.replace("hidden", "active");
+            surname.classList.add("borderWarning");
         } else{
-            console.log("Surname correcto");
+            surname.classList.replace("borderWarning", "borderSuccess")
         }
     }
 }
@@ -88,8 +90,12 @@ function surnameBlur (){
 function dniBlur () {
     dniValue = document.getElementById("dni").value;
     if(dniValue.length < 8){
-        console.log("dni debe tener al menos 8 numeros");
+        var p = document.getElementById("dniErrorLength");
+        p.classList.replace("hidden", "active");
+        dni.classList.add("borderWarning");
     }else {
+        var p = document.getElementById("dniErrorLength");
+        p.classList.replace("active", "hidden");
         var validateDni = false
         for (let i = 0; i < dniValue.length; i++) {
             var numDni = dniValue.substring(i,i+1);
@@ -99,9 +105,13 @@ function dniBlur () {
             }
         }
         if (validateDni){
-            console.log("hay letras");
+            var p = document.getElementById("dniErrorCaracter");
+            p.classList.replace("hidden", "active");
+            dni.classList.add("borderWarning");
         } else {
-            console.log("bien ingresado el dni");
+            var px = document.getElementById("dniErrorCaracter");
+            px.classList.replace("active", "hidden");
+            dni.classList.replace("borderWarning", "borderSuccess");
         }
     }
 }
@@ -292,8 +302,23 @@ function passwordRepeatBlur () {
 
 // funcion pintar msj
 function nameFocus () {
-    var p = document.getElementById("nameErrorCaracter");
-    // var p = document.getElementById("nameError");
+    var p = document.getElementById("nameErrorLength");
+    var p2 = document.getElementById("nameErrorCaracter");
     p.classList.replace("active", "hidden");
-
+    p2.classList.replace("active", "hidden");
 }
+
+function surnameFocus () {
+    var p3 = document.getElementById("surnameErrorLength");
+    var p4 = document.getElementById("surnameErrorCaracter");
+    p3.classList.replace("active", "hidden");
+    p4.classList.replace("active", "hidden");
+}
+
+function dniFocus(){
+    var p5 = document.getElementById("dniErrorLength");
+    var p6 = document.getElementById("dniErrorCaracter");
+    p5.classList.replace("active", "hidden");
+    p6.classList.replace("active", "hidden");
+}
+
