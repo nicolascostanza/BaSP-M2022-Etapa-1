@@ -6,26 +6,46 @@ let password = document.getElementById("password");
 email.addEventListener("focus", emailFocus);
 email.addEventListener("blur", emailBlur);
 password.addEventListener("blur", passwordBlur);
-
+password.addEventListener("focus", passwordBlur);
 // area de trabajo
 
 function passwordBlur () {
-    let passwordValue = password.value;
-    var letritaPwLogin = 0;
+    
+}
+
+// funtions events
+function emailFocus (){
+    email.style.backgroundColor = "blue";
+}
+
+function emailBlur (){
+    var emailValueLogin = email.value;
+    var expRegg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    var respuestaExpRegg = expRegg.test(emailValueLogin);
+    if(respuestaExpRegg){
+        console.log("buen email");
+    } else {
+        console.log("mal email :c");
+    }
+}
+
+function passwordBlur () {
+    var passwordValueLogin = password.value;
+    var lettersPWLogin = 0;
     var numPwLogin = 0
 
-    if (passwordValue.length > 7){
-        for (let i = 0; i < passwordValue.length; i++) {
-            letra = passwordValue.substring(i,i+1);
-            let ascii = letra.charCodeAt();
-            if (letra == Number(letra) && ascii != 32){
+    if (passwordValueLogin.length > 7){
+        for (var i = 0; i < passwordValueLogin.length; i++) {
+            var letterPWLogin = passwordValueLogin.substring(i,i+1);
+            var asciiPWLogin = letterPWLogin.charCodeAt();
+            if (letterPWLogin == Number(letterPWLogin) && asciiPWLogin != 32){
                 numPwLogin += 1;
             }
-            if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
-                letritaPwLogin += 1;
+            if (!((asciiPWLogin < 65) || (asciiPWLogin > 90 && asciiPWLogin < 97) || (asciiPWLogin > 122) && (asciiPWLogin != 209 && asciiPWLogin != 241))) {
+                lettersPWLogin += 1;
             }
         } 
-        if (letritaPwLogin + numPwLogin === passwordValue.length){
+        if (lettersPWLogin + numPwLogin === passwordValueLogin.length){
             console.log("bien solo caracteres y numeros");
         } else {
             console.log("solo permitidos caracteres alfanumericos");
@@ -35,21 +55,3 @@ function passwordBlur () {
         
     }
 }
-
-
-// funtions events
-function emailFocus (){
-    email.style.backgroundColor = "blue";
-}
-
-function emailBlur (){
-    let emailValue = email.value;
-    var expRegg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    var respuestaExpRegg = expRegg.test(emailValue);
-    if(respuestaExpRegg){
-        console.log("buen email");
-    } else {
-        console.log("mal email :c");
-    }
-}
-

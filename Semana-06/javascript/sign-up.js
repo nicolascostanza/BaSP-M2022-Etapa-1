@@ -10,8 +10,11 @@ var email = document.getElementById("email");
 var password = document.getElementById("password");
 var passwordRepeat = document.getElementById("passwordRepeat");
 var checkedPW;
+// prueba
+
 // events
 nombre.addEventListener("blur", nameBlur);
+nombre.addEventListener("focus", nameFocus);
 surname.addEventListener("blur", surnameBlur);
 dni.addEventListener("blur", dniBlur);
 date.addEventListener("blur", dateBlur);
@@ -32,19 +35,16 @@ passwordRepeat.addEventListener("blur", passwordRepeatBlur);
 // area de trabajo para las funciones 
 
 
-
-
-
-
-
-// terminados y para limpiar codigo
-
-
+// functions blur 
 function nameBlur (){
     var nameValue = nombre.value;
     if (nameValue.length < 4){
-        console.log("error Debe tener mas de 3 caracteres");
+        var p = document.getElementById("nameErrorLength");
+        p.classList.replace("hidden", "active")
+        nombre.classList.add("borderWarning");
     } else{
+        var p = document.getElementById("nameErrorLength");
+        p.classList.replace("active", "hidden");
         var cont = false
         for (var i = 0; i < nameValue.length; i++) {
             var letterName = nameValue.substring(i,i+1);
@@ -54,9 +54,12 @@ function nameBlur (){
             }
         }
         if(cont){
-            console.log("no son solo caracteres :C ");
+            var p = document.getElementById("nameErrorCaracter");
+            p.classList.replace("hidden", "active")
+            nombre.classList.add("borderWarning");
         } else {
-            console.log("bien el nombre");
+            nombre.classList.remove("borderWarning");
+            nombre.classList.add("borderSuccess");
         }
     }
 }
@@ -285,4 +288,12 @@ function passwordRepeatBlur () {
     // } else {
     //     console.log("bien rey coinciden ");
     // }
+}
+
+// funcion pintar msj
+function nameFocus () {
+    var p = document.getElementById("nameErrorCaracter");
+    // var p = document.getElementById("nameError");
+    p.classList.replace("active", "hidden");
+
 }

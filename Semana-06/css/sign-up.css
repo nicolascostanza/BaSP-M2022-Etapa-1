@@ -1,3 +1,16 @@
+.borderSuccess{
+    border: 2px solid green;
+}
+.borderWarning{
+    border: 2px solid red;
+}
+.hidden{
+    display: none;
+}
+.active{
+    display: flex;
+    color: red;
+}
 label{
     text-align: center;
     color: #373867;
