@@ -80,6 +80,7 @@ input{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     margin: 1em 0;
+    padding-left: 10px;
 }
 h1{
     padding-top: 0.4em;
@@ -94,7 +95,6 @@ h1{
     line-height: 47px;
 }
 input::placeholder{
-    padding-left: 10px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;

@@ -31,76 +31,11 @@ var validation = {
 
 // area de trabajo para las funciones 
 
-function passwordRepeatBlur (checkedPW) {
-    let passwordRepeatValue = passwordRepeat.value;
-    var letritaPWR = 0;
-    var numPWR = 0
-
-    if (passwordRepeatValue.length > 7){
-        for (let i = 0; i < passwordRepeatValue.length; i++) {
-            letra = passwordRepeatValue.substring(i,i+1);
-            let ascii = letra.charCodeAt();
-            if (letra == Number(letra) && ascii != 32){
-                numPWR += 1;
-            }
-            if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
-                // console.log("caracter que no es letra: " + ascii);
-                letritaPWR += 1;
-            }
-        } 
-        
-        if (letritaPWR + numPWR === passwordRepeatValue.length){
-            console.log("bien solo caracteres y numeros");
-        } else {
-            console.log("solo permitidos caracteres alfanumericos");
-        }
-    } else {
-        console.log("debe ingresar al menos 8 caracteres");
-        
-    }
-
-    if (passwordRepeatValue === checkedPW){
-        console.log("las contraseñas coinciden :D ");
-        
-    } else {
-        console.log("las contraseñas NO COINCIDEN :c ");
-        
-    }
-}
 
 
 
-function passwordBlur () {
-    let passwordValue = password.value;
-    var letritaPW = 0;
-    var numPW = 0
 
-    if (passwordValue.length > 7){
-        for (let i = 0; i < passwordValue.length; i++) {
-            letra = passwordValue.substring(i,i+1);
-            let ascii = letra.charCodeAt();
-            if (letra == Number(letra) && ascii != 32){
-                numPW += 1;
-            }
-            if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
-                // console.log("caracter que no es letra: " + ascii);
-                letritaPW += 1;
-            }
-        } 
-        
-        if (letritaPW + numPW === passwordValue.length){
-            console.log("bien solo caracteres y numeros");
-            return checkedPW = passwordValue;
-        } else {
-            console.log("solo permitidos caracteres alfanumericos");
-        }
-    } else {
-        console.log("debe ingresar al menos 8 caracteres");
-        
-    }
 
-    
-}
 
 // terminados y para limpiar codigo
 
@@ -294,5 +229,71 @@ function emailBlur () {
         console.log("buen email");
     } else {
         console.log("mal email :c");
+    }
+}
+
+function passwordBlur () {
+    let passwordValue = password.value;
+    var letritaPW = 0;
+    var numPW = 0
+
+    if (passwordValue.length > 7){
+        for (let i = 0; i < passwordValue.length; i++) {
+            letra = passwordValue.substring(i,i+1);
+            let ascii = letra.charCodeAt();
+            if (letra == Number(letra) && ascii != 32){
+                numPW += 1;
+            }
+            if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
+                // console.log("caracter que no es letra: " + ascii);
+                letritaPW += 1;
+            }
+        } 
+        
+        if (letritaPW + numPW === passwordValue.length){
+            console.log("bien solo caracteres y numeros");
+            return checkedPW = passwordValue;
+        } else {
+            console.log("solo permitidos caracteres alfanumericos");
+        }
+    } else {
+        console.log("debe ingresar al menos 8 caracteres");
+        
+    }
+}
+
+function passwordRepeatBlur (checkedPW) {
+    let passwordRepeatValue = passwordRepeat.value;
+    var letritaPWR = 0;
+    var numPWR = 0
+
+    if (passwordRepeatValue.length > 7){
+        for (let i = 0; i < passwordRepeatValue.length; i++) {
+            letra = passwordRepeatValue.substring(i,i+1);
+            let ascii = letra.charCodeAt();
+            if (letra == Number(letra) && ascii != 32){
+                numPWR += 1;
+            }
+            if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
+                // console.log("caracter que no es letra: " + ascii);
+                letritaPWR += 1;
+            }
+        } 
+        
+        if (letritaPWR + numPWR === passwordRepeatValue.length){
+            console.log("bien solo caracteres y numeros");
+        } else {
+            console.log("solo permitidos caracteres alfanumericos");
+        }
+    } else {
+        console.log("debe ingresar al menos 8 caracteres");
+    }
+
+    if (passwordRepeatValue === checkedPW){
+        console.log("las contraseñas coinciden :D ");
+        
+    } else {
+        console.log("las contraseñas NO COINCIDEN :c ");
+        
     }
 }

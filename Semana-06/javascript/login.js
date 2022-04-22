@@ -5,25 +5,51 @@ let password = document.getElementById("password");
 
 email.addEventListener("focus", emailFocus);
 email.addEventListener("blur", emailBlur);
+password.addEventListener("blur", passwordBlur);
+
+// area de trabajo
+
+function passwordBlur () {
+    let passwordValue = password.value;
+    var letritaPwLogin = 0;
+    var numPwLogin = 0
+
+    if (passwordValue.length > 7){
+        for (let i = 0; i < passwordValue.length; i++) {
+            letra = passwordValue.substring(i,i+1);
+            let ascii = letra.charCodeAt();
+            if (letra == Number(letra) && ascii != 32){
+                numPwLogin += 1;
+            }
+            if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
+                letritaPwLogin += 1;
+            }
+        } 
+        if (letritaPwLogin + numPwLogin === passwordValue.length){
+            console.log("bien solo caracteres y numeros");
+        } else {
+            console.log("solo permitidos caracteres alfanumericos");
+        }
+    } else {
+        console.log("debe ingresar al menos 8 caracteres");
+        
+    }
+}
 
 
+// funtions events
 function emailFocus (){
-    console.log("estoy haciendo focus");
+    email.style.backgroundColor = "blue";
 }
 
 function emailBlur (){
-    let emailValor = document.getElementById("email").value;
-    let letras = [...emailValor];
-    cont = 0;
-    letras.forEach(e => {
-        if(e === '@'){
-            cont = cont + 1;
-        }
-    })
-    if (cont == 1) {
-        console.log("tiene 1 arroba");     
+    let emailValue = email.value;
+    var expRegg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    var respuestaExpRegg = expRegg.test(emailValue);
+    if(respuestaExpRegg){
+        console.log("buen email");
     } else {
-        console.log("errorRRR")
-    }  
+        console.log("mal email :c");
+    }
 }
 
