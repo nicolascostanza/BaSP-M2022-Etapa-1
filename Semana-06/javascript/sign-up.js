@@ -10,60 +10,61 @@ let email = document.getElementById("email");
 let password = document.getElementById("password");
 
 // events
-nombre.addEventListener("blur", emailBlur)
+nombre.addEventListener("blur", nameBlur)
 dni.addEventListener("blur", dniBlur)
 
+// objeto
+var validation = {
+    name: false,
+    surname: false,
+}
+
+
 // functions
-function emailBlur (){
-    let nameValue = document.getElementById("name").value;
-    console.log(nameValue);
-    
+function nameBlur (){
+    let nameValue = nombre.value;
+    // console.log(typeof(nameValue));
     if (nameValue.length < 4){
         console.log("3 letras o menos");
     }
-    let letras = [...nameValue];
-    console.log(letras);
-    
-    // PRUEBA 3
-    // respuesta = nameValue.includes('number');
-    // console.log(respuesta);
-    
-// PRUEBA 4
-    // if(typeof nameValue != 'string'){
-    //     console.log("no es solo string");
-        
-    // }
+    let cont = 0
+    for (let i = 0; i < nameValue.length; i++) {
+        letra = nameValue.substring(i,i+1);
+        let ascii = letra.charCodeAt();
 
-    // PRUEBA 1
-    // cont = 0;
-    // letras.forEach(e => {
-    //     console.log(typeof(letras.e));
-    //     if(typeof e != 'string'){
-    //         cont = cont + 1;
-    //     }
+        if ((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 32 && ascii != 209 && ascii != 241)) {
+            // console.log("caracter que no es letra: " + ascii);
+            cont += 1;
+        }
+    }
+    if(cont != 0){
+        console.log("no son solo caracteres :C ");
         
-    // })
-    
+    }
 
-    // PRUEBA 2
-//     cont = 0;
-//     letras.forEach(e => {
-//         if(e === '@'){
-//             cont = cont + 1;
-//         }
-//     })
-//     if (cont == 1) {
-//         console.log("tiene 1 arroba");     
-//     } else {
-//         console.log("errorRRR")
-//     }  
 }
+
+// terminados y para limpiar codigo
 function dniBlur () {
+    // HACER UN IF ADENTRO DEL OTRO IF si es menor a 8 o mayor a 8 por afuera
     dniValue = document.getElementById("dni").value;
-    //  or typeof dni != 'number' VA ADENTRO DEL IF ? 
     if(dniValue.length < 8){
-        console.log("distinto de numero");
+        console.log("numero menor a 8");
     }else {
         console.log("bien el dni");
     }
+    let cont = 0
+    for (let i = 0; i < dniValue.length; i++) {
+        numero = dniValue.substring(i,i+1);
+        if (numero != Number(numero)) {
+            console.log("es una letra");
+            cont += 1;
+        } else {
+            // console.log("es un numero");
+        }
+    }
+    if (cont != 0){
+        console.log("hay " + cont + "letras");
+    }
 }
+
