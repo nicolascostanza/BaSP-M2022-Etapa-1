@@ -10,8 +10,9 @@ let email = document.getElementById("email");
 let password = document.getElementById("password");
 
 // events
-nombre.addEventListener("blur", nameBlur)
-dni.addEventListener("blur", dniBlur)
+nombre.addEventListener("blur", nameBlur);
+surname.addEventListener("blur", surnameBlur);
+dni.addEventListener("blur", dniBlur);
 
 // objeto
 var validation = {
@@ -20,16 +21,17 @@ var validation = {
 }
 
 
-// functions
-function nameBlur (){
-    let nameValue = nombre.value;
+// area de trabajo para las funciones 
+
+function surnameBlur (){
+    let surnameValue = surname.value;
     // console.log(typeof(nameValue));
-    if (nameValue.length < 4){
-        console.log("3 letras o menos");
+    if (surnameValue.length < 4){
+        console.log("error");
     }
     let cont = 0
-    for (let i = 0; i < nameValue.length; i++) {
-        letra = nameValue.substring(i,i+1);
+    for (let i = 0; i < surnameValue.length; i++) {
+        letra = surnameValue.substring(i,i+1);
         let ascii = letra.charCodeAt();
 
         if ((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 32 && ascii != 209 && ascii != 241)) {
@@ -43,6 +45,7 @@ function nameBlur (){
     }
 
 }
+
 
 // terminados y para limpiar codigo
 function dniBlur () {
@@ -68,3 +71,25 @@ function dniBlur () {
     }
 }
 
+function nameBlur (){
+    let nameValue = nombre.value;
+    // console.log(typeof(nameValue));
+    if (nameValue.length < 4){
+        console.log("error");
+    }
+    let cont = 0
+    for (let i = 0; i < nameValue.length; i++) {
+        letra = nameValue.substring(i,i+1);
+        let ascii = letra.charCodeAt();
+
+        if ((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 32 && ascii != 209 && ascii != 241)) {
+            // console.log("caracter que no es letra: " + ascii);
+            cont += 1;
+        }
+    }
+    if(cont != 0){
+        console.log("no son solo caracteres :C ");
+        
+    }
+
+}
