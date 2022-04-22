@@ -14,6 +14,7 @@ nombre.addEventListener("blur", nameBlur);
 surname.addEventListener("blur", surnameBlur);
 dni.addEventListener("blur", dniBlur);
 date.addEventListener("blur", dateBlur);
+phone.addEventListener("blur", phoneBlur);
 // objeto
 var validation = {
     name: false,
@@ -22,6 +23,7 @@ var validation = {
 
 
 // area de trabajo para las funciones 
+
 
 
 // terminados y para limpiar codigo
@@ -83,7 +85,7 @@ function dniBlur () {
     }
     let cont = 0
     for (let i = 0; i < dniValue.length; i++) {
-        numero = dniValue.substring(i,i+1);
+        let numero = dniValue.substring(i,i+1);
         if (numero != Number(numero)) {
             console.log("es una letra");
             cont += 1;
@@ -125,3 +127,24 @@ function dateBlur () {
         console.log("MAL. formato dd/mm/yyyy");
     }
 }
+
+function phoneBlur () {
+    let phoneValue = phone.value;
+    if(phoneValue.length == 10){
+        console.log("bien 10 numeros");
+    }else {
+        console.log("mal, debe contener 10 numeros");
+    }
+    let cont = 0
+    for (let i = 0; i < phoneValue.length; i++) {
+        let numberPhone = phoneValue.substring(i,i+1);
+        if (numberPhone != Number(numberPhone)) {
+            console.log("no es un numero");
+            cont += 1;
+        }
+    }
+    if (cont != 0){
+        console.log("hay " + cont + "letras");
+    }
+}
+
