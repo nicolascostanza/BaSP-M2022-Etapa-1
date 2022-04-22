@@ -8,6 +8,7 @@ let locationsingup = document.getElementById("location");
 let postal = document.getElementById("postal");
 let email = document.getElementById("email");
 let password = document.getElementById("password");
+let passwordRepeat = document.getElementById("passwordRepeat");
 
 // events
 nombre.addEventListener("blur", nameBlur);
@@ -27,7 +28,28 @@ var validation = {
 
 function locationBlur () {
     let locationValue = locationsingup.value;
-    
+    if (locationValue.length < 5){
+        console.log("error se requieren mas caracteres");
+    }
+    if (locationValue.indexOf(" ") === -1){
+        console.log("no hay espacios");
+    }
+    let letrita = 0;
+    let contNumber = 0;
+    for (let i = 0; i < locationValue.length; i++) {
+        letra = locationValue.substring(i,i+1);
+        let ascii = letra.charCodeAt();
+        if (letra == Number(letra) && ascii != 32){
+            contNumber += 1;
+        }
+        if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
+            // console.log("caracter que no es letra: " + ascii);
+            letrita += 1;
+            
+        }
+    }
+    console.log(letrita);
+    console.log(contNumber);
     
 }
 
