@@ -13,7 +13,7 @@ let password = document.getElementById("password");
 nombre.addEventListener("blur", nameBlur);
 surname.addEventListener("blur", surnameBlur);
 dni.addEventListener("blur", dniBlur);
-
+date.addEventListener("blur", dateBlur);
 // objeto
 var validation = {
     name: false,
@@ -22,6 +22,33 @@ var validation = {
 
 
 // area de trabajo para las funciones 
+
+
+// terminados y para limpiar codigo
+
+
+function nameBlur (){
+    let nameValue = nombre.value;
+    // console.log(typeof(nameValue));
+    if (nameValue.length < 4){
+        console.log("error");
+    }
+    let cont = 0
+    for (let i = 0; i < nameValue.length; i++) {
+        letra = nameValue.substring(i,i+1);
+        let ascii = letra.charCodeAt();
+
+        if ((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 32 && ascii != 209 && ascii != 241)) {
+            // console.log("caracter que no es letra: " + ascii);
+            cont += 1;
+        }
+    }
+    if(cont != 0){
+        console.log("no son solo caracteres :C ");
+        
+    }
+
+}
 
 function surnameBlur (){
     let surnameValue = surname.value;
@@ -46,8 +73,6 @@ function surnameBlur (){
 
 }
 
-
-// terminados y para limpiar codigo
 function dniBlur () {
     // HACER UN IF ADENTRO DEL OTRO IF si es menor a 8 o mayor a 8 por afuera
     dniValue = document.getElementById("dni").value;
@@ -71,25 +96,32 @@ function dniBlur () {
     }
 }
 
-function nameBlur (){
-    let nameValue = nombre.value;
-    // console.log(typeof(nameValue));
-    if (nameValue.length < 4){
-        console.log("error");
-    }
-    let cont = 0
-    for (let i = 0; i < nameValue.length; i++) {
-        letra = nameValue.substring(i,i+1);
-        let ascii = letra.charCodeAt();
 
-        if ((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 32 && ascii != 209 && ascii != 241)) {
-            // console.log("caracter que no es letra: " + ascii);
-            cont += 1;
-        }
-    }
-    if(cont != 0){
-        console.log("no son solo caracteres :C ");
-        
-    }
+function dateBlur () {
+    let dateValue = date.value;
+    let day = dateValue.substring(0,2);
+    let check1 = dateValue.substring(2,3);
+    let month = dateValue.substring(3,5);
+    let check2 = dateValue.substring(5,6);
+    let year = dateValue.substring(6,10);
 
+    day = Number(day);
+    month = Number(month);
+    year = Number(year);
+
+    console.log("dia " + day + " mes " + month + " year " + year);
+    
+
+    if(day < 1 || day > 31){
+        console.log("mal el dia");
+    }
+    if (month < 1 || month > 12) {
+        console.log("mal el mes");
+    }
+    if(year < 1900 || year > 2022 || year != Number(year)){
+        console.log("mal el año");
+    }
+    if(check1 != '/' && check2 != '/'){
+        console.log("MAL. formato dd/mm/yyyy");
+    }
 }
