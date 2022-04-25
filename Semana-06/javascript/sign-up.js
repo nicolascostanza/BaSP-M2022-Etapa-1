@@ -34,6 +34,7 @@ email.addEventListener("focus", emailFocus);
 password.addEventListener("blur", passwordBlur);
 password.addEventListener("focus", passwordFocus);
 passwordRepeat.addEventListener("blur", passwordRepeatBlur);
+passwordRepeat.addEventListener("blur", passwordRepeatFocus);
 
 // area de trabajo para las funciones 
 
@@ -43,7 +44,7 @@ function nameBlur (){
     var nameValue = nombre.value;
     if (nameValue.length < 4){
         var p = document.getElementById("nameErrorLength");
-        p.classList.replace("hidden", "active")
+        p.classList.replace("hidden", "active");
         nombre.classList.add("borderWarning");
     } else{
         var p = document.getElementById("nameErrorLength");
@@ -89,7 +90,8 @@ function surnameBlur (){
             p.classList.replace("hidden", "active");
             surname.classList.add("borderWarning");
         } else{
-            surname.classList.replace("borderWarning", "borderSuccess")
+            surname.classList.remove("borderWarning");
+            surname.classList.add("borderSuccess");
         }
     }
 }
@@ -118,7 +120,8 @@ function dniBlur () {
         } else {
             p = document.getElementById("dniErrorCaracter");
             p.classList.replace("active", "hidden");
-            dni.classList.replace("borderWarning", "borderSuccess");
+            dni.classList.remove("borderWarning");
+            dni.classList.add("borderSuccess");
         }
     }
 }
@@ -152,7 +155,8 @@ function dateBlur () {
     } else {
         p = document.getElementById("dateError");
         p.classList.replace("active", "hidden");
-        date.classList.replace("borderWarning", "borderSuccess");
+        date.classList.remove("borderWarning");
+        date.classList.add("borderSuccess");
     }
 }
 
@@ -176,7 +180,8 @@ function phoneBlur () {
         } else {
             p = document.getElementById("phoneErrorCaracter");
             p.classList.replace("active", "hidden");
-            phone.classList.replace("borderWarning", "borderSuccess");
+            phone.classList.remove("borderWarning");
+            phone.classList.add("borderSuccess");
         }
     }else {
         var p = document.getElementById("phoneErrorLength");
@@ -224,7 +229,8 @@ function addressBlur () {
                 p.classList.replace("active", "hidden");
                 var p2 = document.getElementById("addressErrorCaracterSpecial");
                 p2.classList.replace("active", "hidden");
-                address.classList.replace("borderWarning", "borderSuccess");
+                address.classList.remove("borderWarning");
+                address.classList.add("borderSuccess");
             } else {
                 var p = document.getElementById("addressErrorCaracterSpecial");
                 p.classList.replace("hidden", "active");
@@ -264,7 +270,8 @@ function locationBlur () {
         } else {
             p = document.getElementById("addressErrorCaracter");
             p.classList.replace("active", "hidden");
-            locationsingup.classList.replace("borderWarning", "borderSuccess");
+            locationsingup.classList.remove("borderWarning");
+            locationsingup.classList.add("borderSuccess");
         }
     }
 }
@@ -277,7 +284,8 @@ function postalBlur () {
         if( postalValue.length == 4 || postalValue.length == 5 ){
             p = document.getElementById("postalErrorCaracter");
             p.classList.replace("active", "hidden");
-            postal.classList.replace("borderWarning", "borderSuccess");
+            postal.classList.remove("borderWarning");
+            postal.classList.add("borderSuccess");
         } else {
             p = document.getElementById("postalErrorCaracter");
             p.classList.replace("hidden", "active");
@@ -297,7 +305,8 @@ function emailBlur () {
     if(respuestaExpReg){
         p = document.getElementById("emailError");
         p.classList.replace("active", "hidden");
-        email.classList.replace("borderWarning", "borderSuccess");
+        email.classList.remove("borderWarning");
+        email.classList.add("borderSuccess");
     } else {
         var p = document.getElementById("emailError");
         p.classList.replace("hidden", "active");
@@ -310,7 +319,7 @@ function passwordBlur () {
     var letterPassword = 0;
     var numberPasdword = 0
     if (passwordValue.length > 7){
-        p = document.getElementById("phoneErrorLength");
+        p = document.getElementById("passwordErrorLength");
         p.classList.replace("active", "hidden");
         for (let i = 0; i < passwordValue.length; i++) {
             var letterPass = passwordValue.substring(i,i+1);
@@ -323,10 +332,10 @@ function passwordBlur () {
             }
         } 
         if (letterPassword + numberPasdword === passwordValue.length){
-            console.log("BIEN");
             p = document.getElementById("passwordErrorCaracter");
             p.classList.replace("active", "hidden");
-            password.classList.replace("borderWarning", "borderSuccess");
+            password.classList.remove("borderWarning");
+            password.classList.add("borderSuccess");
             // return checkedPW = password.value;
         } else {
             p = document.getElementById("passwordErrorCaracter");
@@ -345,6 +354,8 @@ function passwordRepeatBlur () {
     var lettersPasswordRepeat = 0;
     var numberPasswordRepeat = 0;
     if (passwordRepeatValue.length > 7){
+        var p = document.getElementById("passwordRepeatErrorLength");
+        p.classList.replace("active", "hidden");
         for (let i = 0; i < passwordRepeatValue.length; i++) {
             var letterPasswordRepeat = passwordRepeatValue.substring(i,i+1);
             var asciiPR = letterPasswordRepeat.charCodeAt();
@@ -356,12 +367,19 @@ function passwordRepeatBlur () {
             }
         } 
         if (lettersPasswordRepeat + numberPasswordRepeat == passwordRepeatValue.length){
-            console.log("bien solo caracteres y numeros");
+            p = document.getElementById("passwordRepeatErrorCaracter");
+            p.classList.replace("active", "hidden");
+            passwordRepeat.classList.remove("borderWarning");
+            passwordRepeat.classList.add("borderSuccess");
         } else {
-            console.log("solo permitidos caracteres alfanumericos");
+            p = document.getElementById("passwordRepeatErrorCaracter");
+            p.classList.replace("hidden", "active");
+            passwordRepeat.classList.add("borderWarning");
         }
     } else {
-        console.log("debe ingresar al menos 8 caracteres");
+        var p = document.getElementById("passwordRepeatErrorLength");
+        p.classList.replace("hidden", "active");
+        passwordRepeat.classList.add("borderWarning");
     }
     // if (passwordRepeatValue != checkedPW){
     //     console.log("MAL las contraseñas coinciden  ");
@@ -438,5 +456,12 @@ function passwordFocus () {
     p = document.getElementById("passwordErrorLength");
     p2 = document.getElementById("passwordErrorCaracter");
     p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
+}
+
+function passwordRepeatFocus () {
+    px = document.getElementById("passwordRepeatErrorLength");
+    p2 = document.getElementById("passwordRepeatErrorCaracter");
+    px.classList.replace("active", "hidden");
     p2.classList.replace("active", "hidden");
 }
