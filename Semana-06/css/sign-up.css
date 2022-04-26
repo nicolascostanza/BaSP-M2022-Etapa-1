@@ -43,6 +43,10 @@ h1{
     color: #373867;
     line-height: 47px;
 }
+#create-employy > p {
+    background-color: red;
+    width: 100%;
+}
 main{
     width: 100%;
     display: flex;

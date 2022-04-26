@@ -74,11 +74,21 @@ btnCreate.onclick = function(e) {
         && passwordRepeatValidateModal) {
         modalOk.style.display = "block";
         var pintar = document.getElementById("create-employy");
-        pintar.innerHTML = `<h3>HOLA PRUEBA</h3>`;
+        pintar.innerHTML = `<p>Name: ` + nombre.value + `</p>
+        <p>Surname: ` + surname.value + `</p>
+        <p>Dni: ` + dni.value + `</p>
+        <p>Date: ` + date.value + `</p>
+        <p>Phone: ` + phone.value + `</p>
+        <p>Address: ` + address.value + `</p>
+        <p>Location: ` + locationsingup.value + `</p>
+        <p>Postal: ` + postal.value + `</p>
+        <p>Email: ` + email.value + `</p>
+        <p>Password: ` + password.value + `</p>`
+        ;
     } else {
         modalError.style.display = "block";
         var pintarError = document.getElementById("error-create-employy");
-        pintarError.innerHTML = `<h3>HOLA PRUEBA ERROR</h3>`;
+        pintarError.innerHTML = `<h3>Name: </h3>`;
     }
 }
 
