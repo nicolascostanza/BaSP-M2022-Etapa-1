@@ -47,4 +47,18 @@ GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-04/inde
 
 GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-05/index.html
 
+### Week 6
+
+◉ Modularize the problem into smaller parts for easier solving
+
+◉ Structure the html of the loggin and the singup
+
+◉ Then I gave it styles and made it responsive
+
+◉ Take the html elements via dom and apply blur and focus events to them to validate each field
+
+◉ At the end, validate the create button to validate if I entered everything correctly or not
+
+GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
+
 Author: Nicolas Costanza
