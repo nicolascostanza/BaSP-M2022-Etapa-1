@@ -23,24 +23,39 @@
                 <span class="header-rocket">Rocket</span>
             </a>
         </header>
+        
+
+        <!-- The Modal -->
+        <div id="myModal-Ok" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="p-login"></p>
+        </div>
+
+        </div>
         <main>
             <form>
                 <h1>Log in</h1>
+                <label>Email</label>
                 <div>
-                    <label>Email</label>
-                    <input id="email" type="text" placeholder="Email">
+                    <input id="email-login" type="text" placeholder="Email">
+                    <p id="email-error-login" class="hidden">Campo obligatorio</p>
+                    <p id="emailError-login" class="hidden">Error ingrese email valido</p>
                 </div>
+                <label>Password</label>
                 <div>
-                    <label>Password</label>
-                    <input id="password" type="password" placeholder="Password">
+                    <input id="password-login" type="password" placeholder="Password">
+                    <p id="password-error-login" class="hidden">Campo obligatorio</p>
+                    <p id="passwordErrorLength-login" class="hidden">Error ingrese al menos 8 caracteres</p>
+                    <p id="passwordErrorCaracter-login" class="hidden">Error ingrese solo letras y numeros</p>
                 </div>
                 <div class="buttons">
-                    <button class="btn-login"><a>LOG IN</a></button>
+                    <button id="myBtn" class="btn-login">Login</button>
                     <button type="button" class="btn-recovery"><a href="../views/recovery.html">PASSWORD RECOVERY</a></button>
                 </div>
             </form>
-            <div class="resultados">
-            </div>
         </main>
         <footer>
             <h3>Trackgenix®</h3>

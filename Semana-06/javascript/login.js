@@ -1,57 +1,139 @@
-let email = document.getElementById("email");
-let password = document.getElementById("password");
+var emailLogin = document.getElementById("email-login");
+var passwordLogin = document.getElementById("password-login");
+var btnAcept = document.getElementsByClassName("btn-login");
 
 // validacion de email
+var validateEmailLogin = false;
+var validatePasswordLogin = false;
 
-email.addEventListener("focus", emailFocus);
-email.addEventListener("blur", emailBlur);
-password.addEventListener("blur", passwordBlur);
-password.addEventListener("focus", passwordBlur);
+emailLogin.addEventListener("focus", emailFocus);
+emailLogin.addEventListener("blur", emailBlur);
+passwordLogin.addEventListener("focus", passwordFocus);
+passwordLogin.addEventListener("blur", passwordBlur);
 // area de trabajo
 
-function passwordBlur () {
-    
+btnAcept.onclick = function (e) {
+    e.preventDefault();
+    console.log('Hola Mundo');
 }
-
 // funtions events
-function emailFocus (){
-    email.style.backgroundColor = "blue";
+function emailFocus () {
+    p = document.getElementById("email-error-login");
+    p.classList.replace("active", "hidden");
+    p2 = document.getElementById("emailError-login");
+    p2.classList.replace("active", "hidden");
 }
-
-function emailBlur (){
-    var emailValueLogin = email.value;
-    var expRegg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    var respuestaExpRegg = expRegg.test(emailValueLogin);
-    if(respuestaExpRegg){
-        console.log("buen email");
+function emailBlur (e) {
+    var emailValueLogin = e.target.value;
+    if (emailValueLogin == ""){
+        validateEmailLogin = false;
+        var p = document.getElementById("email-error-login");
+        p.classList.replace("hidden", "active");
+        emailLogin.classList.add("borderWarning");
     } else {
-        console.log("mal email :c");
-    }
-}
-
-function passwordBlur () {
-    var passwordValueLogin = password.value;
-    var lettersPWLogin = 0;
-    var numPwLogin = 0
-
-    if (passwordValueLogin.length > 7){
-        for (var i = 0; i < passwordValueLogin.length; i++) {
-            var letterPWLogin = passwordValueLogin.substring(i,i+1);
-            var asciiPWLogin = letterPWLogin.charCodeAt();
-            if (letterPWLogin == Number(letterPWLogin) && asciiPWLogin != 32){
-                numPwLogin += 1;
-            }
-            if (!((asciiPWLogin < 65) || (asciiPWLogin > 90 && asciiPWLogin < 97) || (asciiPWLogin > 122) && (asciiPWLogin != 209 && asciiPWLogin != 241))) {
-                lettersPWLogin += 1;
-            }
-        } 
-        if (lettersPWLogin + numPwLogin === passwordValueLogin.length){
-            console.log("bien solo caracteres y numeros");
+        var p = document.getElementById("email-error-login");
+        p.classList.replace("active", "hidden");
+        var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        var respuestaExpReg = expReg.test(emailValueLogin);
+        if(respuestaExpReg){
+            p = document.getElementById("emailError-login");
+            p.classList.replace("active", "hidden");
+            emailLogin.classList.remove("borderWarning");
+            emailLogin.classList.add("borderSuccess");
+            validateEmailLogin = true;
         } else {
-            console.log("solo permitidos caracteres alfanumericos");
+            var p = document.getElementById("emailError-login");
+            p.classList.replace("hidden", "active");
+            emailLogin.classList.add("borderWarning");
+            validateEmailLogin = false;
         }
-    } else {
-        console.log("debe ingresar al menos 8 caracteres");
-        
     }
+}
+function passwordFocus () {
+    p = document.getElementById("password-error-login");
+    p2 = document.getElementById("passwordErrorLength-login");
+    p3 = document.getElementById("passwordErrorCaracter-login");
+    p.classList.replace("active", "hidden");
+    p2.classList.replace("active", "hidden");
+    p3.classList.replace("active", "hidden");
+}
+function passwordBlur (e) {
+    var passwordValue = e.target.value;
+    if (passwordValue == ""){
+        validatePasswordLogin = false;
+        var p = document.getElementById("password-error-login");
+        p.classList.replace("hidden", "active");
+        passwordLogin.classList.add("borderWarning");
+    } else {
+        var p = document.getElementById("password-error-login");
+        p.classList.replace("active", "hidden");
+        var letterPassword = 0;
+        var numberPasdword = 0;
+        if (passwordValue.length > 7){
+            p = document.getElementById("passwordErrorLength-login");
+            p.classList.replace("active", "hidden");
+            for (let i = 0; i < passwordValue.length; i++) {
+                var letterPass = passwordValue.substring(i,i+1);
+                let ascii = letterPass.charCodeAt();
+                if (letterPass == Number(letterPass) && ascii != 32){
+                    numberPasdword += 1;
+                }
+                if (!((ascii < 65) || (ascii > 90 && ascii < 97) || (ascii > 122) && (ascii != 209 && ascii != 241))) {
+                    letterPassword += 1;
+                }
+            }
+            if (letterPassword + numberPasdword === passwordValue.length){
+                p = document.getElementById("passwordErrorCaracter-login");
+                p.classList.replace("active", "hidden");
+                passwordLogin.classList.remove("borderWarning");
+                passwordLogin.classList.add("borderSuccess");
+                validatePasswordLogin = true;
+                // return checkedPW = password.value;
+            } else {
+                p = document.getElementById("passwordErrorCaracter-login");
+                p.classList.replace("hidden", "active");
+                passwordLogin.classList.add("borderWarning");
+                validatePasswordLogin = false;
+            }
+        } else {
+            var p = document.getElementById("passwordErrorLength-login");
+            p.classList.replace("hidden", "active");
+            passwordLogin.classList.add("borderWarning");
+            validatePasswordLogin = false;
+        }
+    }
+}
+
+
+// modal 
+
+var modalOk = document.getElementById("myModal-Ok");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function(e) {
+    e.preventDefault();
+    if(!validateEmailLogin){
+        modalOk.style.display = "block";
+        var text = document.getElementById("p-login");
+        text.innerHTML = "<h3>Error</h3>" +
+        "<h3>Email invalid</h3>";
+    } else if(!validatePasswordLogin){
+        modalOk.style.display = "block";
+        var text = document.getElementById("p-login");
+        text.innerHTML = "<h3>Error</h3>" +
+        "<h3>Password invalid</h3>";
+    } else {
+        modalOk.style.display = "block";
+        var text = document.getElementById("p-login");
+        text.innerHTML = "<h3>Congratulations</h3>" +
+        "<h3>log in successfully</h3>";
+    }
+}
+span.onclick = function() {
+    modalOk.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modalOk) {
+    modalOk.style.display = "none";
+  }
 }

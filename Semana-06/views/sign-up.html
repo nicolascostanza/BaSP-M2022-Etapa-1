@@ -22,40 +22,21 @@
                 <span class="header-rocket">Rocket</span>
             </a>
         </header>
-        <div id="modal-ok">
-            <div class="modall">
-                <div class="modal-header">
-                    <h3 class="modal-tittle">Congratulations</h3>
-                    <span class="btn-close">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <img class="icon-modal" src="../assets/img/tick-modal.png" alt="complete register">
-                    <p>you registered successfully</p>
-                    <div id="create-employy"></div>
-                </div>
-                <div class="modal-footer">
-                    <button class="ok-btn">Agree</button>
-                </div>
-            </div>
+        <!-- The Modal -->
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+        
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="create-employy"></p>
+          </div>
+        
         </div>
-        <div id="modal-bad">
-            <div class="modal-error">
-                <div class="modal-header">
-                    <h3 class="modal-tittle">Error</h3>
-                    <span class="btn-close">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-body-flex">
-                        <img class="icon-modal" src="../assets/img/error-modal.png" alt="error-modal">
-                        <p>You did not complete all the fields correctly</p>
-                    </div>
-                    <div id="error-create-employy"></div>
-                </div>
-                <div class="modal-footer">
-                    <button class="ok-btn">Agree</button>
-                </div>
-            </div>
-        </div>
+
+
         <main>
             <form>
                 <h1>Sign Up</h1>
@@ -139,7 +120,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <button type="submit" id="btn-create">CREATE</button>
+                    <button class="btn-create" id="myBtn2">CREATE</button>
                     <button class="btn-cancel"><a href="index.html">CANCEL</a></button>
                 </div>
             </form>

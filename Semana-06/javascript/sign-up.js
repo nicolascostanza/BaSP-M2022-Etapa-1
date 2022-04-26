@@ -59,9 +59,18 @@ var btnExit = document.getElementsByClassName("btn-close");
 var btnCreate = document.getElementById("btn-create");
 
 
-btnCreate.onclick = function(e) {
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function(e) {
     e.preventDefault();
-    if (nameValidateModal 
+    if(nameValidateModal 
         && surnameValidateModal 
         && dniValidateModal 
         && dateValidateModal 
@@ -71,38 +80,125 @@ btnCreate.onclick = function(e) {
         && postalValidateModal
         && emailValidateModal
         && passwordValidateModal
-        && passwordRepeatValidateModal) {
-        modalOk.style.display = "block";
-        var pintar = document.getElementById("create-employy");
-        pintar.innerHTML = `<p>Name: ` + nombre.value + `</p>
-        <p>Surname: ` + surname.value + `</p>
-        <p>Dni: ` + dni.value + `</p>
-        <p>Date: ` + date.value + `</p>
-        <p>Phone: ` + phone.value + `</p>
-        <p>Address: ` + address.value + `</p>
-        <p>Location: ` + locationsingup.value + `</p>
-        <p>Postal: ` + postal.value + `</p>
-        <p>Email: ` + email.value + `</p>
-        <p>Password: ` + password.value + `</p>`
+        && passwordRepeatValidateModal){
+        modal.style.display = "block";
+        var print = document.getElementById("create-employy");
+        print.innerHTML = "<h3>Congratulations</h3>" +
+        "<h3>Sing Up successfully</h3>" +
+        `<h4>Name: ` + nombre.value + `</h4>
+        <h4>Surname: ` + surname.value + `</h4>
+        <h4>Dni: ` + dni.value + `</h4>
+        <h4>Date: ` + date.value + `</h4>
+        <h4>Phone: ` + phone.value + `</h4>
+        <h4>Address: ` + address.value + `</h4>
+        <h4>Location: ` + locationsingup.value + `</h4>
+        <h4>Postal: ` + postal.value + `</h4>
+        <h4>Email: ` + email.value + `</h4>
+        <h4>Password: ` + password.value + `</h4>`
         ;
-    } else {
-        modalError.style.display = "block";
-        var pintarError = document.getElementById("error-create-employy");
-        pintarError.innerHTML = `<h3>Name: </h3>`;
+    } else{
+
+        // if (!nameValidateModal){
+        //     var textName = nombre.value;
+        // }
+        // if (!surnameValidateModal){
+        //     var textSurname = surname.value;
+        // }
+        // if (!dniValidateModal){
+        //     var textDni = dni.value;
+        // }
+        // if (!dateValidateModal){
+        //     var textDate = date.value;
+        // }
+        // if (!phoneValidateModal){
+        //     var textPhone = phone.value;
+        // }
+        // if (!addressValidateModal){
+        //     var textAddress = address.value;
+        // }
+        // if (!locationValidateModal){
+        //     var textLocation = locationsingup.value;
+        // }
+        // if (!postalValidateModal){
+        //     var textPostal = postal.value;
+        // }
+        // if (!emailValidateModal){
+        //     var textEmail = email.value;
+        // }
+        // if (!passwordValidateModal){
+        //     var textPassword = password.value;
+        // }
+        // if (!passwordRepeatValidateModal){
+        //     var textPasswordRepeat = passwordRepeat.value;
+        // }
+        modal.style.display = "block";
+        var print = document.getElementById("create-employy");
+        print.innerHTML = "<h3>Error</h3>" +
+        "<h3>Sing Up</h3>" +
+        `<h4>there are wrong fields try again</h4>`
     }
 }
 
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
-// if (nameValue == ""){
-//     nameValidateModal = false;
-//     var p = document.getElementById("nameError");
-//     p.classList.replace("hidden", "active");
-//     nombre.classList.add("borderWarning");
-// } else {
-//     var p = document.getElementById("nameError");
-//     p.classList.replace("active", "hidden");
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+// btnExit[1].onclick = function (e) {
+//     e.preventDefault();
+//     console.log('Hola Mundoooooo');
+//     modalOk.style.display = "none";
+//     // modalEError.style.display = "none";
 // }
-// btnCreate2.onclik = function(e) {}
+// btnExit[0].onclick = function (e) {
+//     modalError.style.display = "none";
+//     modalError.style.zIndex = "-1"
+// }
+
+// btnCreate.onclick = function(e) {
+//     e.preventDefault();
+//     if (nameValidateModal 
+//         && surnameValidateModal 
+//         && dniValidateModal 
+//         && dateValidateModal 
+//         && phoneValidateModal 
+//         && addressValidateModal
+//         && locationValidateModal
+//         && postalValidateModal
+//         && emailValidateModal
+//         && passwordValidateModal
+//         && passwordRepeatValidateModal) {
+//         modalOk.style.display = "block";
+//         var pintar = document.getElementById("create-employy");
+//         pintar.innerHTML = `<p>Name: ` + nombre.value + `</p>
+//         <p>Surname: ` + surname.value + `</p>
+//         <p>Dni: ` + dni.value + `</p>
+//         <p>Date: ` + date.value + `</p>
+//         <p>Phone: ` + phone.value + `</p>
+//         <p>Address: ` + address.value + `</p>
+//         <p>Location: ` + locationsingup.value + `</p>
+//         <p>Postal: ` + postal.value + `</p>
+//         <p>Email: ` + email.value + `</p>
+//         <p>Password: ` + password.value + `</p>`
+//         ;
+//     } else {
+//         modalError.style.display = "block";
+//         var pintarError = document.getElementById("error-create-employy");
+//         pintarError.innerHTML = `<h3>Name: </h3>`;
+//     }
+// }
+
+// pruebas
 
 // functions blur 
 function nameBlur (e){

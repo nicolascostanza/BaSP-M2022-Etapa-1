@@ -65,6 +65,42 @@ main{
 .last-div > label{
      text-align: left;
 }
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 div{
     width: 45%;
     margin: 0.3em 0;
@@ -109,7 +145,7 @@ input::placeholder{
     line-height: 19px;
     color: #373867;
 }
-#btn-create{
+.btn-create{
     background-color: #AACE9B;
     margin-top: 10px;
     width: 30%;
@@ -122,6 +158,7 @@ input::placeholder{
     font-size: 1em;
     line-height: 19px;
     color: #373867;
+    cursor: pointer;
 }
 a:link, a:visited, a:active{
     text-decoration: none;
@@ -135,7 +172,8 @@ footer{
     align-items: center;
 }
 h3{
-    text-align: center;
+    color: #373867;
+    text-align: left;
     padding: 10px ;
     width: auto;
     height: 29px;
@@ -144,6 +182,10 @@ h3{
     font-weight: 400;
     font-size: 25px;
     line-height: 29px;
+}
+h4{
+    color: #373867;
+    padding-left: 10px;
 }
 @media only screen and (max-width: 480px) {
     form{
@@ -158,7 +200,7 @@ h3{
     .buttons{
         flex-direction: column;
     }
-    #btn-create, .btn-cancel{
+    .btn-create, .btn-cancel{
         width: 90%;
     }
     .last-div{
@@ -167,114 +209,5 @@ h3{
     .last-div > label{
         width: 100%;
    }
-}
-
-/* modal */
-
-#modal-ok{
-    display: none;
-    /* display: flex; */
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    position: fixed;
-    border-radius: 5px;
-    /* opacity: 1; */
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-header{
-    background-color: #373867;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: solid 1px black;
-}
-.btn-close{
-    font-size: 40px;
-    margin-right: 10px;
-    margin-top: 5px;
-}
-.btn-close:hover, .btn-close:focus{
-    cursor:pointer;
-    color: white;
-}
-.modal-tittle{
-    color: #49A37B;
-}
-.modal-body{
-    width: 95%;
-    margin: 0 auto;
-    height: 75%;
-}
-.modal-body-flex{
-    display: flex;
-}
-.modal-body > p {
-    color: #373867;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.5em;
-    line-height: 35px;
-    padding-top: 5%;
-    padding-left: 5%;
-}
-
-.modal-footer{
-    width: 95%;
-    margin: 0 auto;
-}
-.ok-btn{
-    margin-left: 50%;
-    background-color: #AACE9B;
-    margin-top: 10px;
-    width: 40%;
-    height: 38px;
-    border-radius: 5px;
-    text-align: center;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1em;
-    line-height: 19px;
-    color: #373867;
-    cursor: pointer;
-}
-.ok-btn:hover{
-    font-size: 1.2em;
-}
-.modall{
-    background-color: white;
-    margin: 0 auto;
-    border: solid black 1px;
-    border-radius: 5px;
-    height: 80%;
-}
-
-/* modal error */
-#modal-bad{
-    display: none;
-    /* display: flex; */
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    position: fixed;
-    border-radius: 5px;
-    /* opacity: 1; */
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-error{
-    background-color: white;
-    margin: 0 auto;
-    border: solid black 1px;
-    border-radius: 5px;
-    height: 80%;
-}
-
-.icon-modal{
-    width: 30px;
-    height: 30px;
-    padding-top: 25px;
 }
 
