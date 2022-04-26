@@ -29,7 +29,9 @@
                     <span class="btn-close">&times;</span>
                 </div>
                 <div class="modal-body">
+                    <img class="icon-modal" src="../assets/img/tick-modal.png" alt="complete register">
                     <p>you registered successfully</p>
+                    <div id="create-employy"></div>
                 </div>
                 <div class="modal-footer">
                     <button class="ok-btn">Agree</button>
@@ -43,7 +45,11 @@
                     <span class="btn-close">&times;</span>
                 </div>
                 <div class="modal-body">
-                    <p>You did not complete all the fields correctly</p>
+                    <div class="modal-body-flex">
+                        <img class="icon-modal" src="../assets/img/error-modal.png" alt="error-modal">
+                        <p>You did not complete all the fields correctly</p>
+                    </div>
+                    <div id="error-create-employy"></div>
                 </div>
                 <div class="modal-footer">
                     <button class="ok-btn">Agree</button>
@@ -122,11 +128,10 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <button class="btn-create">CREATE</button>
+                    <button type="submit" id="btn-create">CREATE</button>
                     <button class="btn-cancel"><a href="index.html">CANCEL</a></button>
                 </div>
-            </form> 
-            
+            </form>
         </main>
         <footer>
             <h3>Trackgenix®</h3>

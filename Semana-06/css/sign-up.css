@@ -105,7 +105,7 @@ input::placeholder{
     line-height: 19px;
     color: #373867;
 }
-.btn-create{
+#btn-create{
     background-color: #AACE9B;
     margin-top: 10px;
     width: 30%;
@@ -149,16 +149,16 @@ h3{
     div{
         margin: 0 auto;
         align-items: center;
-        width: 90%;
+        width: 80%;
     }
     .buttons{
         flex-direction: column;
     }
-    .btn-create, .btn-cancel{
+    #btn-create, .btn-cancel{
         width: 90%;
     }
     .last-div{
-        width: 95%;
+        width: 80%;
     }
     .last-div > label{
         width: 100%;
@@ -203,14 +203,17 @@ h3{
     margin: 0 auto;
     height: 75%;
 }
+.modal-body-flex{
+    display: flex;
+}
 .modal-body > p {
     color: #373867;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 1.875em;
+    font-size: 1.5em;
     line-height: 35px;
-    padding-top: 10%;
+    padding-top: 5%;
     padding-left: 5%;
 }
 
@@ -264,3 +267,10 @@ h3{
     border-radius: 5px;
     height: 80%;
 }
+
+.icon-modal{
+    width: 30px;
+    height: 30px;
+    padding-top: 25px;
+}
+

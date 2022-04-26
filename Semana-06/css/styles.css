@@ -94,7 +94,11 @@ footer{
     flex-wrap: nowrap;
     justify-content: space-between;
 }
-/* footer classes*/
+.menu-hamburguer{
+    background-color: #373867;
+    /* display: block; */
+    width: 100%;
+}
 .texto-footer{
     align-self: center;
 }
@@ -125,6 +129,11 @@ footer{
     .first-section, .main-section{
         width: 100%;
     }
+    .menu-hamburguer{
+        background-color: #373867;
+        display: none;
+        width: 100%;
+    }
 }
 /* MOBILE */
 @media only screen and (max-width: 480px) {
@@ -134,6 +143,10 @@ footer{
     h4{
         margin-top: 10px;
         margin-bottom: 0;
+    }
+    .ppal{
+        display: flex;
+        flex-direction: column;
     }
     .election{
         display: block;
@@ -172,5 +185,65 @@ footer{
     .btn-send, .btn-reset{
         margin: .6em 0;
         width: 200px;
+    }
+    /* menu hamburguesa */
+    
+    .menu-hamburguer{
+        background-color: #373867;
+        display: none;
+        width: 100%;
+    }
+    .header-tittle-hamburguer{
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu{
+        color: white;
+        font-size: 30px;
+        width: 20%;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .btn-close-hamburguer{
+        margin-top: 5px;
+        margin-right: 5px;
+        font-size: 30px;
+    }
+    .btn-close-hamburguer:hover {
+        cursor: pointer;
+        color: white;
+    }
+    .header-nav-hamburguer{
+        margin-top: 10px;
+        padding-left: 10px;
+        font-size: 20px;
+    }
+    .header-nav-hamburguer > ul > li > a{
+        color: white;
+        margin: 5px 0;
+        padding-bottom: 3px;
+        width: 90%;
+        border-bottom: solid black 1px;
+    }
+    .contact-us{
+        color: white;
+        width: 40%;
+        font-size: 30px;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .contact-us-subtext{
+        margin-left: 10px;
+        color: white;
+    }
+    address {
+        margin-left: 10px;
+    }
+    .text-contact{
+        font-size: 10px;
+        color: white;
+    }
+    address ul li img{
+        background-color: white;
     }
 }
