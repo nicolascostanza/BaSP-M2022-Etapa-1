@@ -28,6 +28,12 @@ footer{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.menu-hamburguer{
+    display: none;
+}
+.display-menu-phone{
+    display: none;
+}
 /* classes */
 .ppal{
     width: 100%;
