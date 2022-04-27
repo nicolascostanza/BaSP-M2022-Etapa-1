@@ -193,6 +193,18 @@ footer {
   display: block;
   color: red;
 }
+.redirect{
+  padding-bottom: 10px;
+  color: #373867;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+}
+.redirect a{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bolder;
+}
 @media only screen and (max-width: 480px) {
   form {
     min-width: 240px;

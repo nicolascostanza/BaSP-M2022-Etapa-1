@@ -46,7 +46,6 @@ password.addEventListener("blur", passwordBlur);
 password.addEventListener("focus", passwordFocus);
 passwordRepeat.addEventListener("blur", passwordRepeatBlur);
 passwordRepeat.addEventListener("blur", passwordRepeatFocus);
-
 function nameBlur(e) {
   var nameValue = e.target.value;
   if (nameValue == "") {
@@ -90,7 +89,6 @@ function nameBlur(e) {
     }
   }
 }
-
 function surnameBlur(e) {
   var surnameValue = e.target.value;
   if (surnameValue == "") {
@@ -645,7 +643,7 @@ btn.onclick = function (e) {
       print.innerHTML =
         "<h3>Error</h3>" +
         "<h3>Sing Up</h3>" +
-        `<h4>there are wrong fields try again</h4>`;
+        `<h4>there are wrong fields<br>try again</h4>`;
     }
   };
   span.onclick = function () {
