@@ -1,0 +1,255 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+/* HEADER */
+header{
+    display: flex;
+}
+/* ASIDE */
+aside{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+ul li{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* MAIN */
+main{
+    flex: 5;
+}
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.menu-hamburguer{
+    display: none;
+}
+.display-menu-phone{
+    display: none;
+}
+/* classes */
+.ppal{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+/* header classes */
+.hamburger-menu{
+    display: none;
+}
+.tittle-header{
+    display: flex;
+}
+/* main classes */
+.first-section{
+    display: flex;
+}
+.img-watch-mobile{
+    display: none;
+}
+.information-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.group{
+    flex: 2 1 325px;
+}
+.subtext-rigth{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-wrap: nowrap;
+}
+.formulario-info-user{
+    display: flex;
+    justify-content: flex-start;
+    flex: 0 0 300px;
+    flex-wrap: wrap;
+}
+.personal-information{
+    flex: 1 2 215px;
+}
+.election{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.contact{
+    display: flex;
+    justify-content: flex-start;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+.about-us{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.lists{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.menu-hamburguer{
+    background-color: #373867;
+    /* display: block; */
+    width: 100%;
+}
+.texto-footer{
+    align-self: center;
+}
+/* MEDIA QUERIES */
+/* TABLET */
+@media only screen and (max-width: 780px) {
+    body{
+        font-size: 13px;
+        width: 100%
+    }
+    aside {
+      display: none;
+    }
+    .menu-gral{
+        display: none;
+    }
+    .img-watch-mobile{
+        display: none;
+    }
+    .mainfooter{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .hamburger-menu{
+        display: inline-block;
+    }
+    .first-section, .main-section{
+        width: 100%;
+    }
+    .menu-hamburguer{
+        background-color: #373867;
+        display: none;
+        width: 100%;
+    }
+}
+/* MOBILE */
+@media only screen and (max-width: 480px) {
+    footer > div{
+        margin: 0 auto;
+    }
+    h4{
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    .ppal{
+        display: flex;
+        flex-direction: column;
+    }
+    .election{
+        display: block;
+    }
+    .img-watch-mobile{
+        display: block;
+    }
+    .img-watch-desktop{
+        display: none;
+    }
+    .separator{
+        width: 70vw;
+    }
+    .formulario-info-user{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 25px;
+        width: 95%;
+        padding-bottom: 30px;
+    }
+    .personal-information{
+        width: 100%;
+    }
+    .about-us{
+        flex-direction: column;
+    }
+    .lists{
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttons{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .btn-send, .btn-reset{
+        margin: .6em 0;
+        width: 200px;
+    }
+    /* menu hamburguesa */
+    
+    .menu-hamburguer{
+        background-color: #373867;
+        display: none;
+        width: 100%;
+    }
+    .header-tittle-hamburguer{
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu{
+        color: white;
+        font-size: 30px;
+        width: 20%;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .btn-close-hamburguer{
+        margin-top: 5px;
+        margin-right: 5px;
+        font-size: 30px;
+    }
+    .btn-close-hamburguer:hover {
+        cursor: pointer;
+        color: white;
+    }
+    .header-nav-hamburguer{
+        margin-top: 10px;
+        padding-left: 10px;
+        font-size: 20px;
+    }
+    .header-nav-hamburguer > ul > li > a{
+        color: white;
+        margin: 5px 0;
+        padding-bottom: 3px;
+        width: 90%;
+        border-bottom: solid black 1px;
+    }
+    .contact-us{
+        color: white;
+        width: 40%;
+        font-size: 30px;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .contact-us-subtext{
+        margin-left: 10px;
+        color: white;
+    }
+    address {
+        margin-left: 10px;
+    }
+    .text-contact{
+        font-size: 10px;
+        color: white;
+    }
+    address ul li img{
+        background-color: white;
+    }
+}

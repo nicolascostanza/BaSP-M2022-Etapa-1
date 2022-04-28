@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Trangenix is a web application for the human resources area with incredible functionalities">
+        <meta name="keywords"  content="Trangenix, RadiumRocket, BaSP, rrhh">
+        <meta name="author" content="Nicolas Costanza">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/header.css">
+        <!-- <link rel="stylesheet" href="../css/main.css"> -->
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/login.css">
+        <title>Trackgenix</title>
+    </head>
+    <body>
+        <header>
+            <span class="hamburger-menu">&#x2630</span>
+            <a class="tittle-header" href="index.html">
+                <span class="header-radium">Radium</span>
+                <span class="header-rocket">Rocket</span>
+            </a>
+        </header>
+        <div id="myModal-Ok" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="p-login"></p>
+            </div>
+        </div>
+        <main>
+            <form>
+                <h1>Log in</h1>
+                <label>Email</label>
+                <div>
+                    <input id="email-login" type="text" placeholder="Email">
+                    <p id="email-error-login" class="hidden">Campo obligatorio</p>
+                    <p id="emailError-login" class="hidden">Error ingrese email valido</p>
+                </div>
+                <label>Password</label>
+                <div>
+                    <input id="password-login" type="password" placeholder="Password">
+                    <p id="password-error-login" class="hidden">Campo obligatorio</p>
+                    <p id="passwordErrorLength-login" class="hidden">Error ingrese al menos 8 caracteres</p>
+                    <p id="passwordErrorCaracter-login" class="hidden">Error ingrese solo letras y numeros</p>
+                </div>
+                <div class="buttons">
+                    <button id="myBtn" class="btn-login">Login</button>
+                    <button type="button" class="btn-recovery"><a href="../views/recovery.html">PASSWORD RECOVERY</a></button>
+                </div>
+                <p class="redirect">You don't have an account? <a href="../views/sign-up.html">Sign up here</a></p>
+            </form>
+        </main>
+        <footer>
+            <h3>Trackgenix®</h3>
+        </footer>
+        <script src="../javascript/login.js"></script>
+    </body>
+</html>

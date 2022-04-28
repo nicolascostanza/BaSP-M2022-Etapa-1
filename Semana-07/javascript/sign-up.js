@@ -603,6 +603,22 @@ btn.onclick = function (e) {
       passwordValidateModal &&
       passwordRepeatValidateModal
     ) {
+
+      
+      // .catch(
+      //   // modal de error no se pudo completar la peticion
+      //   // muestro modal de error no se pudo conseguir el get
+      // 
+
+      
+
+      
+
+
+
+
+
+
       modal.style.display = "block";
       var print = document.getElementById("create-employy");
       print.innerHTML = "<h3>Congratulations</h3>" +
@@ -637,16 +653,40 @@ btn.onclick = function (e) {
           <h4>Password: ` +
         password.value +
         `</h4>`;
-
     } else {
-      modal.style.display = "block";
-      var print = document.getElementById("create-employy");
-      print.innerHTML =
-        "<h3>Error</h3>" +
-        "<h3>Sing Up</h3>" +
-        `<h4>there are wrong fields<br>try again</h4>`;
+
+
+      var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
+      url = url + "?name=" + nombre.value + "&lastname=" + surname.value + "&dni=" + dni.value + "&";
+      fetch(url)
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (jsonResponse) {
+        console.log(jsonResponse);
+        modal.style.display = "block";
+        // console.log(jsonResponse.name);
+
+        // var employeeCreate = {
+        //   name = jsonResponse.name
+        //   surname = jsonResponse.lastname
+        // }
+        // var user = [employeeCreate];
+        // // append
+        // localStorage.setItem("user", user);
+
+      })
+
+
+
+      // modal.style.display = "block";
+      // var print = document.getElementById("create-employy");
+      // print.innerHTML =
+      //   "<h3>Error</h3>" +
+      //   "<h3>Sing Up</h3>" +
+      //   `<h4>there are wrong fields<br>try again</h4>`;
+
     }
-  };
   span.onclick = function () {
     modal.style.display = "none";
   };
@@ -656,3 +696,4 @@ btn.onclick = function (e) {
     }
   };
 
+}
