@@ -180,9 +180,9 @@ function dateBlur(e) {
   } else {
     var p = document.getElementById("date-error");
     p.classList.replace("active", "hidden");
-    var day = dateValue.substring(0, 2);
+    var day = dateValue.substring(3, 5);
     var check1 = dateValue.substring(2, 3);
-    var month = dateValue.substring(3, 5);
+    var month = dateValue.substring(0, 2);
     var check2 = dateValue.substring(5, 6);
     var year = dateValue.substring(6);
     day = Number(day);
@@ -588,6 +588,7 @@ function passwordRepeatFocus() {
   px.classList.replace("active", "hidden");
   p2.classList.replace("active", "hidden");
 }
+
 btn.onclick = function (e) {
     e.preventDefault();
     if (
@@ -603,61 +604,72 @@ btn.onclick = function (e) {
       passwordValidateModal &&
       passwordRepeatValidateModal
     ) {
+      var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
+      url = url + "?name=" + nombre.value + "&lastName=" + surname.value + "&dni=" + dni.value + "&dob=" + date.value + "&phone=" + phone.value + "&address=" + address.value + "&city=" + locationsingup.value + "&zip=" + postal.value + "&email=" + email.value + "&password=" + password.value;
+      fetch(url)
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (jsonResponse) {
+        console.log(jsonResponse.msg);
+        jsonResponse.msg = "aca cambie el texto" ;
+        console.log(jsonResponse.msg);
+        modal.style.display = "block";
+        // var employeeCreate = {
+        //   name = jsonResponse.name
+        //   surname = jsonResponse.lastname
+        // }
+        // var user = [employeeCreate];
+        // // append
+        // localStorage.setItem("user", user);
+      })
 
-      
-      // .catch(
+      .catch(function (hola){
+        console.log("error");
+        
+      }
+      )
       //   // modal de error no se pudo completar la peticion
       //   // muestro modal de error no se pudo conseguir el get
       // 
 
-      
-
-      
-
-
-
-
-
-
-      modal.style.display = "block";
-      var print = document.getElementById("create-employy");
-      print.innerHTML = "<h3>Congratulations</h3>" +
-        "<h3>Sing Up successfully</h3>" +
-        `<h4>Name: ` +
-        nombre.value +
-        `</h4>
-          <h4>Surname: ` +
-        surname.value +
-        `</h4>
-          <h4>Dni: ` +
-        dni.value +
-        `</h4>
-          <h4>Date: ` +
-        date.value +
-        `</h4>
-          <h4>Phone: ` +
-        phone.value +
-        `</h4>
-          <h4>Address: ` +
-        address.value +
-        `</h4>
-          <h4>Location: ` +
-        locationsingup.value +
-        `</h4>
-          <h4>Postal: ` +
-        postal.value +
-        `</h4>
-          <h4>Email: ` +
-        email.value +
-        `</h4>
-          <h4>Password: ` +
-        password.value +
-        `</h4>`;
+      // var print = document.getElementById("create-employy");
+      // print.innerHTML = "<h3>Congratulations</h3>" +
+      //   "<h3>Sing Up successfully</h3>" +
+      //   `<h4>Name: ` +
+      //   nombre.value +
+      //   `</h4>
+      //     <h4>Surname: ` +
+      //   surname.value +
+      //   `</h4>
+      //     <h4>Dni: ` +
+      //   dni.value +
+      //   `</h4>
+      //     <h4>Date: ` +
+      //   date.value +
+      //   `</h4>
+      //     <h4>Phone: ` +
+      //   phone.value +
+      //   `</h4>
+      //     <h4>Address: ` +
+      //   address.value +
+      //   `</h4>
+      //     <h4>Location: ` +
+      //   locationsingup.value +
+      //   `</h4>
+      //     <h4>Postal: ` +
+      //   postal.value +
+      //   `</h4>
+      //     <h4>Email: ` +
+      //   email.value +
+      //   `</h4>
+      //     <h4>Password: ` +
+      //   password.value +
+      //   `</h4>`;
     } else {
 
-
       var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
-      url = url + "?name=" + nombre.value + "&lastname=" + surname.value + "&dni=" + dni.value + "&";
+      url = url + "?name=" + nombre.value + "&lastName=" + surname.value + "&dni=" + dni.value + "&dob=" + date.value + "&phone=" + phone.value + "&address=" + address.value + "&city=" + locationsingup.value + "&zip=" + postal.value + "&email=" + email.value + "&password=" + password.value;
       fetch(url)
       .then(function (response) {
         return response.json()
@@ -677,6 +689,9 @@ btn.onclick = function (e) {
 
       })
 
+      .catch(function (hola){console.log(hola)}
+      )
+ 
 
 
       // modal.style.display = "block";
@@ -695,5 +710,4 @@ btn.onclick = function (e) {
       modal.style.display = "none";
     }
   };
-
 }
