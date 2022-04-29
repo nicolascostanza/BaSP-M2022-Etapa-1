@@ -104,19 +104,34 @@ function passwordBlur(e) {
   }
 }
 btn.onclick = function (e) {
+  var url = "https://basp-m2022-api-rest-server.herokuapp.com/login";
+  url = url + "?email=" + emailLogin.value + "&password=" + passwordLogin.value;
   e.preventDefault();
-  if (!validateEmailLogin) {
+  if (!validateEmailLogin || !validatePasswordLogin) {
     modalOk.style.display = "block";
     var text = document.getElementById("p-login");
     text.innerHTML = "<h3>Error</h3>" + "<h3>Email invalid</h3>";
-  } else if (!validatePasswordLogin) {
-    modalOk.style.display = "block";
-    var text = document.getElementById("p-login");
-    text.innerHTML = "<h3>Error</h3>" + "<h3>Password invalid</h3>";
-  } else {
+    fetch(url)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (jsonResponse) {
+      console.log(jsonResponse.errors[0].msg);
+      // modal.style.display = "block";
+      // console.log(jsonResponse.name);
+      // jsonResponse.msg
+      // var employyCreate = {
+      //   name = data.name
+      //   surname = data.surname
+      // }
+      // localStorage.setItem("user", employyCreate);
 
-    var url = "https://basp-m2022-api-rest-server.herokuapp.com/login";
-    url = url + "?email=" + emailLogin.value + "&password=" + passwordLogin.value;
+    })
+
+  } else {
+    
+    // var text = document.getElementById("p-login");
+    // text.innerHTML = "<h3>Error</h3>" + "<h3>Email invalid</h3>";
     fetch(url)
     .then(function (response) {
       return response.json()
@@ -135,10 +150,13 @@ btn.onclick = function (e) {
     })
 
 
-    modalOk.style.display = "block";
-    var text = document.getElementById("p-login");
-    text.innerHTML =
-      "<h3>Congratulations</h3>" + "<h3>log in successfully</h3>";
+    
+
+
+    // modalOk.style.display = "block";
+    // var text = document.getElementById("p-login");
+    // text.innerHTML =
+    //   "<h3>Congratulations</h3>" + "<h3>log in successfully</h3>";
   }
 };
 span.onclick = function () {

@@ -612,8 +612,6 @@ btn.onclick = function (e) {
       })
       .then(function (jsonResponse) {
         console.log(jsonResponse.msg);
-        jsonResponse.msg = "aca cambie el texto" ;
-        console.log(jsonResponse.msg);
         modal.style.display = "block";
         // var employeeCreate = {
         //   name = jsonResponse.name
@@ -623,12 +621,9 @@ btn.onclick = function (e) {
         // // append
         // localStorage.setItem("user", user);
       })
-
       .catch(function (hola){
         console.log("error");
-        
-      }
-      )
+      })
       //   // modal de error no se pudo completar la peticion
       //   // muestro modal de error no se pudo conseguir el get
       // 
