@@ -97,6 +97,15 @@ footer {
   font-size: 1em;
   line-height: 19px;
 }
+.text{
+  color: #f00;
+  margin: 10px 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 19px;
+}
 .text-error{
   color: #f00;
   font-family: "Roboto";

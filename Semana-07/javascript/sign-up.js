@@ -39,6 +39,12 @@ var textPostal = document.getElementById("msgPostal");
 var textEmail = document.getElementById("msgEmail");
 var textPassword = document.getElementById("msgPassword");
 var TextRepeatPassword = document.getElementById("msgPasswordRepeat");
+// array de banderas para validacion
+
+// array de mensajes con error
+var errorMessages = [textName, textSurname, textDni, textDate, textPhone, textAddress, textLocation, textPostal, textEmail, textPassword, TextRepeatPassword];
+
+var InputsName = ["Name: ", "Surname: ", "Dni: ", "Date: ", "Phone: ", "Address: ", "Location: ", "Postal: ", "Email: ", "Password: ", "Password Repeat: "];
 // eventos
 nombre.addEventListener("blur", nameBlur);
 nombre.addEventListener("focus", nameFocus);
@@ -348,8 +354,6 @@ function postalBlur(e) {
         postalValidateModal = false;
       }
     } else {
-      var p = document.getElementById("postalErrorLength");
-      p.classList.replace("hidden", "active");
       postal.classList.add("borderWarning");
       textPostal.textContent = "Enter only numbers";
       postalValidateModal = false;
@@ -489,117 +493,84 @@ function passwordFocus() {
   textPassword.textContent = "";
 }
 function passwordRepeatFocus() {
-  px = document.getElementById("passwordRepeatErrorLength");
-  p2 = document.getElementById("passwordRepeatErrorCaracter");
-  px.classList.replace("active", "hidden");
-  p2.classList.replace("active", "hidden");
+	TextRepeatPassword.textContent = "";
 }
 
 btn.onclick = function (e) {
-    e.preventDefault();
-    var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
-    url = url + "?name=" + nombre.value + "&lastName=" + surname.value + "&dni=" + dni.value + "&dob=" + 
-    date.value + "&phone=" + phone.value + "&address=" + address.value + "&city=" + locationsingup.value 
-    + "&zip=" + postal.value + "&email=" + email.value + "&password=" + password.value;
-    if (
-      nameValidateModal &&
-      surnameValidateModal &&
-      dniValidateModal &&
-      dateValidateModal &&
-      phoneValidateModal &&
-      addressValidateModal &&
-      locationValidateModal &&
-      postalValidateModal &&
-      emailValidateModal &&
-      passwordValidateModal &&
-      passwordRepeatValidateModal
-    ) {
-      fetch(url)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (jsonResponse) {
-        console.log(jsonResponse);
-        modal.classList.add("active-modal");
-        var print = document.getElementById("create-employy");
-        print.innerHTML = "<h3>" + jsonResponse.msg + "</h3><p>Name: " + jsonResponse.data.name + "</p><p>LastName: " + jsonResponse.data.lastName + "</p><p>Dni: " + jsonResponse.data.dni + "</p><p>Date: " + jsonResponse.data.dob + "</p><p>Phone: " + jsonResponse.data.phone + "</p><p>Address: " + jsonResponse.data.address + "</p><p>Location: " + jsonResponse.data.city + "</p><p>Postal: " + jsonResponse.data.zip + "</p><p>Email: " + jsonResponse.data.email + "</p><p>Password: " + jsonResponse.data.password;
-        var user = {
-          nameUser: jsonResponse.data.name,
-          lastName: jsonResponse.data.lastName,
-          dni: jsonResponse.data.dni,
-          date: jsonResponse.data.dob,
-          phone: jsonResponse.data.phone,
-          address: jsonResponse.data.address,
-          location: jsonResponse.data.city,
-          postal: jsonResponse.data.zip,
-          email: jsonResponse.data.email,
-          password: jsonResponse.data.password,
-        }
-        var userJson = JSON.stringify(user);
-        localStorage.setItem("user", userJson);
-      })
-      .catch(function (hola){
-
-      })
-    } else {
-      modal.classList.add("active");
+  e.preventDefault();
+  var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
+  url = url + "?name=" + nombre.value + "&lastName=" + surname.value + "&dni=" + dni.value + "&dob=" + 
+  date.value + "&phone=" + phone.value + "&address=" + address.value + "&city=" + locationsingup.value 
+  + "&zip=" + postal.value + "&email=" + email.value + "&password=" + password.value;
+  if (
+    nameValidateModal &&
+    surnameValidateModal &&
+    dniValidateModal &&
+    dateValidateModal &&
+    phoneValidateModal &&
+    addressValidateModal &&
+    locationValidateModal &&
+    postalValidateModal &&
+    emailValidateModal &&
+    passwordValidateModal &&
+    passwordRepeatValidateModal
+  ) {
+    fetch(url)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (jsonResponse) {
+      console.log(jsonResponse);
+      modal.classList.add("active-modal");
       var print = document.getElementById("create-employy");
-      print.textContent = "aca muestro los errores de mis validaciones";
-      modal.style.display = "block";
-      // print.appendChild(textName);
-      console.log(textName);
-    }
-      // var print = document.getElementById("create-employy");
-      // print.innerHTML = "<h3>Congratulations</h3>" +
-      //   "<h3>Sing Up successfully</h3>" +
-      //   `<h4>Name: ` +
-      //   nombre.value +
-      //   `</h4>
-      //     <h4>Surname: ` +
-      //   surname.value +
-      //   `</h4>
-      //     <h4>Dni: ` +
-      //   dni.value +
-      //   `</h4>
-      //     <h4>Date: ` +
-      //   date.value +
-      //   `</h4>
-      //     <h4>Phone: ` +
-      //   phone.value +
-      //   `</h4>
-      //     <h4>Address: ` +
-      //   address.value +
-      //   `</h4>
-      //     <h4>Location: ` +
-      //   locationsingup.value +
-      //   `</h4>
-      //     <h4>Postal: ` +
-      //   postal.value +
-      //   `</h4>
-      //     <h4>Email: ` +
-      //   email.value +
-      //   `</h4>
-      //     <h4>Password: ` +
-      //   password.value +
-      //   `</h4>`;
-    // } else {
-      // modal.style.display = "block";
-      // var print = document.getElementById("create-employy");
-      // print.innerHTML =
-      //   "<h3>Error</h3>" +
-      //   "<h3>Sing Up</h3>" +
-      //   `<h4>there are wrong fields<br>try again</h4>`;
-    }
+      print.innerHTML = "<h3>" + jsonResponse.msg + "</h3><p>Name: " + jsonResponse.data.name + "</p><p>LastName: " + jsonResponse.data.lastName + "</p><p>Dni: " + jsonResponse.data.dni + "</p><p>Date: " + jsonResponse.data.dob + "</p><p>Phone: " + jsonResponse.data.phone + "</p><p>Address: " + jsonResponse.data.address + "</p><p>Location: " + jsonResponse.data.city + "</p><p>Postal: " + jsonResponse.data.zip + "</p><p>Email: " + jsonResponse.data.email + "</p><p>Password: " + jsonResponse.data.password;
+      var user = {
+        nameUser: jsonResponse.data.name,
+        lastName: jsonResponse.data.lastName,
+        dni: jsonResponse.data.dni,
+        date: jsonResponse.data.dob,
+        phone: jsonResponse.data.phone,
+        address: jsonResponse.data.address,
+        location: jsonResponse.data.city,
+        postal: jsonResponse.data.zip,
+        email: jsonResponse.data.email,
+        password: jsonResponse.data.password,
+      }
+      var userJson = JSON.stringify(user);
+      localStorage.setItem("user", userJson);
+    })
+    .catch(function (error){
+		console.log("error");
+    })
+  } else {
+    modal.classList.add("active");
+    modal.style.display = "block";
+    var print = document.getElementById("create-employy");
+	print.textContent = "";
+	var flags = [nameValidateModal, surnameValidateModal, dniValidateModal, dateValidateModal, phoneValidateModal, addressValidateModal, locationValidateModal, postalValidateModal, emailValidateModal, passwordValidateModal, passwordRepeatValidateModal];
+	for (let i = 0; i < flags.length; i++) {
+		if(!(flags[i])){
+			var text = document.createElement("p");
+			var saltoLinea = document.createElement("br");
+			text = InputsName[i] + errorMessages[i].textContent;
+			print.append(text);
+			print.append(saltoLinea);
+		}
+	}
+  }
+}
 span.onclick = function () {
   modal.classList.remove("active");
   // modal.classList.add("hidden");
   modal.classList.replace("active", "hidden");
-};
+  modal.style.display = "none";
+}
 window.onclick = function (event) {
   if (event.target == modal) {
     // modal.classList.remove("active");
     // modal.classList.add("hidden");
     modal.classList.replace("active", "hidden");
+	modal.style.display = "none";
   }
 }
 // si ls esta vacio no completa, si tiene algo lo completa
