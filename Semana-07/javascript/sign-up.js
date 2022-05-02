@@ -13,17 +13,20 @@ var btnCreate = document.getElementById("btn-create");
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn2");
 var span = document.getElementsByClassName("close")[0];
-var nameValidateModal = false;
-var surnameValidateModal = false;
-var dniValidateModal = false;
-var dateValidateModal = false;
-var phoneValidateModal = false;
-var addressValidateModal = false;
-var locationValidateModal = false;
-var postalValidateModal = false;
-var emailValidateModal = false;
-var passwordValidateModal = false;
-var passwordRepeatValidateModal = false;
+var nameValidateModal = true;
+var surnameValidateModal = true;
+var dniValidateModal = true;
+var dateValidateModal = true;
+var phoneValidateModal = true;
+var addressValidateModal = true;
+var locationValidateModal = true;
+var postalValidateModal = true;
+var emailValidateModal = true;
+var passwordValidateModal = true;
+var passwordRepeatValidateModal = true;
+
+// VerificationSingup();
+
 nombre.addEventListener("blur", nameBlur);
 nombre.addEventListener("focus", nameFocus);
 surname.addEventListener("blur", surnameBlur);
@@ -591,6 +594,10 @@ function passwordRepeatFocus() {
 
 btn.onclick = function (e) {
     e.preventDefault();
+    var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
+    url = url + "?name=" + nombre.value + "&lastName=" + surname.value + "&dni=" + dni.value + "&dob=" + 
+    date.value + "&phone=" + phone.value + "&address=" + address.value + "&city=" + locationsingup.value 
+    + "&zip=" + postal.value + "&email=" + email.value + "&password=" + password.value;
     if (
       nameValidateModal &&
       surnameValidateModal &&
@@ -604,30 +611,42 @@ btn.onclick = function (e) {
       passwordValidateModal &&
       passwordRepeatValidateModal
     ) {
-      var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
-      url = url + "?name=" + nombre.value + "&lastName=" + surname.value + "&dni=" + dni.value + "&dob=" + date.value + "&phone=" + phone.value + "&address=" + address.value + "&city=" + locationsingup.value + "&zip=" + postal.value + "&email=" + email.value + "&password=" + password.value;
       fetch(url)
       .then(function (response) {
         return response.json()
       })
       .then(function (jsonResponse) {
-        console.log(jsonResponse.msg);
-        modal.style.display = "block";
-        // var employeeCreate = {
-        //   name = jsonResponse.name
-        //   surname = jsonResponse.lastname
-        // }
-        // var user = [employeeCreate];
-        // // append
-        // localStorage.setItem("user", user);
+        console.log(jsonResponse);
+        
+        modal.classList.add("active");
+        var print = document.getElementById("create-employy");
+        print.textContent = jsonResponse.msg;
+        var user = {
+          nameUser: jsonResponse.data.name,
+          lastName: jsonResponse.data.lastName,
+          dni: jsonResponse.data.dni,
+          date: jsonResponse.data.dob,
+          phone: jsonResponse.data.phone,
+          address: jsonResponse.data.address,
+          location: jsonResponse.data.city,
+          postal: jsonResponse.data.zip,
+          email: jsonResponse.data.email,
+          password: jsonResponse.data.password,
+        }
+        var userJson = JSON.stringify(user);
+        localStorage.setItem("user", userJson);
       })
       .catch(function (hola){
-        console.log("error");
+        modal.classList.add("active");
+        var print = document.getElementById("create-employy");
+        print.textContent = "ERROR. No se pudo completar la peticion";
       })
-      //   // modal de error no se pudo completar la peticion
-      //   // muestro modal de error no se pudo conseguir el get
-      // 
+    } else {
+      modal.classList.add("active");
+      var print = document.getElementById("create-employy");
+      print.textContent = "aca muestro los errores de mis validaciones";
 
+    }
       // var print = document.getElementById("create-employy");
       // print.innerHTML = "<h3>Congratulations</h3>" +
       //   "<h3>Sing Up successfully</h3>" +
@@ -661,48 +680,41 @@ btn.onclick = function (e) {
       //     <h4>Password: ` +
       //   password.value +
       //   `</h4>`;
-    } else {
-
-      var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
-      url = url + "?name=" + nombre.value + "&lastName=" + surname.value + "&dni=" + dni.value + "&dob=" + date.value + "&phone=" + phone.value + "&address=" + address.value + "&city=" + locationsingup.value + "&zip=" + postal.value + "&email=" + email.value + "&password=" + password.value;
-      fetch(url)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (jsonResponse) {
-        console.log(jsonResponse);
-        modal.style.display = "block";
-        // console.log(jsonResponse.name);
-
-        // var employeeCreate = {
-        //   name = jsonResponse.name
-        //   surname = jsonResponse.lastname
-        // }
-        // var user = [employeeCreate];
-        // // append
-        // localStorage.setItem("user", user);
-
-      })
-
-      .catch(function (hola){console.log(hola)}
-      )
- 
-
-
+    // } else {
       // modal.style.display = "block";
       // var print = document.getElementById("create-employy");
       // print.innerHTML =
       //   "<h3>Error</h3>" +
       //   "<h3>Sing Up</h3>" +
       //   `<h4>there are wrong fields<br>try again</h4>`;
-
     }
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
+span.onclick = function () {
+  // modal.style.display = "none";
+  modal.classList.remove("active");
+  modal.classList.add("hidden");
+};
+window.onclick = function (event) {
+  if (event.target == modal) {
+    // modal.style.display = "none";
+    modal.classList.remove("active");
+    modal.classList.add("hidden");
+  }
 }
+
+
+
+// function VerificationSingup (){
+var userprint = JSON.parse(localStorage.getItem("user")) || null;
+// userprint = guardar || [];
+nombre.value = userprint.nameUser;
+surname.value = userprint.lastName;
+dni.value = userprint.dni;
+date.value = userprint.date;
+phone.value = userprint.phone;
+address.value = userprint.address;
+locationsingup.value = userprint.location;
+postal.value = userprint.postal;
+email.value = userprint.email;
+password.value = userprint.password;
+passwordRepeat.value = userprint.password;
+// }

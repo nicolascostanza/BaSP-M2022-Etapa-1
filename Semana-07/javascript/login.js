@@ -107,63 +107,34 @@ btn.onclick = function (e) {
   var url = "https://basp-m2022-api-rest-server.herokuapp.com/login";
   url = url + "?email=" + emailLogin.value + "&password=" + passwordLogin.value;
   e.preventDefault();
-  if (!validateEmailLogin || !validatePasswordLogin) {
-    modalOk.style.display = "block";
-    var text = document.getElementById("p-login");
-    text.innerHTML = "<h3>Error</h3>" + "<h3>Email invalid</h3>";
+  if (validateEmailLogin && validatePasswordLogin) {
     fetch(url)
     .then(function (response) {
       return response.json()
     })
     .then(function (jsonResponse) {
-      console.log(jsonResponse.errors[0].msg);
-      // modal.style.display = "block";
-      // console.log(jsonResponse.name);
-      // jsonResponse.msg
-      // var employyCreate = {
-      //   name = data.name
-      //   surname = data.surname
-      // }
-      // localStorage.setItem("user", employyCreate);
-
+      modalOk.classList.remove("hidden");
+      modalOk.classList.add("active");
+      var text = document.getElementById("p-login");
+      text.innerHTML = "<h3>" + jsonResponse.msg + "</h3>";
     })
-
   } else {
-    
-    // var text = document.getElementById("p-login");
-    // text.innerHTML = "<h3>Error</h3>" + "<h3>Email invalid</h3>";
-    fetch(url)
-    .then(function (response) {
-      return response.json()
-    })
-    .then(function (jsonResponse) {
-      console.log(jsonResponse.msg);
-      // modal.style.display = "block";
-      // console.log(jsonResponse.name);
-      // jsonResponse.msg
-      // var employyCreate = {
-      //   name = data.name
-      //   surname = data.surname
-      // }
-      // localStorage.setItem("user", employyCreate);
-
-    })
-
-
-    
-
-
-    // modalOk.style.display = "block";
-    // var text = document.getElementById("p-login");
-    // text.innerHTML =
-    //   "<h3>Congratulations</h3>" + "<h3>log in successfully</h3>";
+    console.log("error");
+    modalOk.classList.remove("hidden");
+    modalOk.classList.add("active");
+    var text = document.getElementById("p-login");
+    text.innerHTML = "<h3>Error</h3><p>Invalid email or password</p>";
   }
 };
 span.onclick = function () {
-  modalOk.style.display = "none";
+  // modalOk.style.display = "none";
+  modalOk.classList.remove("active");
+  modalOk.classList.add("hidden");
 };
 window.onclick = function (event) {
   if (event.target == modalOk) {
-    modalOk.style.display = "none";
+    // modalOk.style.display = "none";
+    modalOk.classList.remove("active");
+    modalOk.classList.add("hidden");
   }
 };
