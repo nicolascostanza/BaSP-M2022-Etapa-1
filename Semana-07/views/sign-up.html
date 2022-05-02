@@ -25,7 +25,7 @@
         <div id="myModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <p id="create-employy"></p>
+            <p id="create-employy" class="text"></p>
           </div>
         </div>
         <main>
@@ -33,79 +33,59 @@
                 <h1>Sign Up</h1>
                 <div>
                     <label>Name</label>
-                    <input id="name" type="name" placeholder="Name">
-                    <p id="nameError" class="hidden">Campo obligatorio</p>
-                    <p id="nameErrorLength" class="hidden">Error ingrese mas de 3 caracteres</p>
-                    <p id="nameErrorCaracter" class="hidden">Error Ingrese solo caracteres</p>
+                    <input id="name" type="text" placeholder="Name">
+                    <p id="msgName" class="text-error"></p>
                 </div>
                 <div>
                     <label>Surname</label>
-                    <input id="surname" type="name" placeholder="Surname">
-                    <p id="surname-error" class="hidden">Campo obligatorio</p>
-                    <p id="surnameErrorLength" class="hidden">Error ingrese mas de 3 caracteres</p>
-                    <p id="surnameErrorCaracter" class="hidden">Error Ingrese solo caracteres</p>
+                    <input id="surname" type="text" placeholder="Surname">
+                    <p id="msgSurname" class="text-error"></p>
                 </div>
                 <div>
                     <label>DNI</label>
                     <input id="dni" type="text" placeholder="DNI">
-                    <p id="dni-error" class="hidden">Campo obligatorio</p>
-                    <p id="dniErrorLength" class="hidden">Error ingrese mas de 7 numeros</p>
-                    <p id="dniErrorCaracter" class="hidden">Error Ingrese solo numeros</p>
+                    <p id="msgDni" class="text-error"></p>
                 </div>
                 <div>
                     <label>Date of birth</label>
                     <input id="date" type="text" placeholder="mm/dd/yyyy">
-                    <p id="date-error" class="hidden">Campo obligatorio</p>
-                    <p id="dateError" class="hidden">Error formato mm/dd/yyyy</p>
+                    <p id="msgDate" class="text-error"></p>
                 </div>
                 <div>
                     <label>Phone</label>
                     <input id="phone" type="text" placeholder="Phone">
-                    <p id="phone-error" class="hidden">Campo obligatorio</p>
-                    <p id="phoneErrorLength" class="hidden">Error ingrese 10 numeros</p>
-                    <p id="phoneErrorCaracter" class="hidden">Error Ingrese solo numeros</p>
+                    <p id="msgPhone" class="text-error"></p>
                 </div>
                 <div>
                     <label>Address</label>
                     <input id="address" type="text" placeholder="Address">
-                    <p id="address-error" class="hidden">Campo obligatorio</p>
-                    <p id="addressErrorLength" class="hidden">Error minimo 5 caracteres</p>
-                    <p id="addressErrorSpace" class="hidden">Error Debe contener espacio</p>
-                    <p id="addressErrorCaracter" class="hidden">Error ingrese numeros y letras</p>
-                    <p id="addressErrorCaracterSpecial" class="hidden">Error no ingrese caracteres especiales</p>
+                    <p id="msgAddress" class="text-error"></p>
                 </div>
                 <div>
                     <label>Location</label>
                     <input id="location" type="text" placeholder="Location">
-                    <p id="location-error" class="hidden">Campo obligatorio</p>
-                    <p id="locationErrorLength" class="hidden">Error minimo 3 caracteres</p>
-                    <p id="locationErrorCaracter" class="hidden">Error solo texto alfanumerico</p>
+                    <p id="msgLocation" class="text-error"></p>
                 </div>
                 <div>
                     <label>Postal Code</label>
                     <input id="postal" type="text" placeholder="Postal Code">
-                    <p id="postal-error" class="hidden">Campo obligatorio</p>
-                    <p id="postalErrorLength" class="hidden">Error ingrese solo numeros</p>
-                    <p id="postalErrorCaracter" class="hidden">Error entre 4 y 5 caracteres</p>
+                    <p id="msgPostal" class="text-error"></p>
                 </div>
                 <div>
                     <label>Email</label>
                     <input id="email" type="text" placeholder="Email">
-                    <p id="email-error" class="hidden">Campo obligatorio</p>
-                    <p id="emailError" class="hidden">Error ingrese email valido</p>
+                    <p id="msgEmail" class="text-error"></p>
                 </div>
                 <div>
                     <label>Password</label>
                     <input id="password" type="password" placeholder="Password">
-                    <p id="password-error" class="hidden">Campo obligatorio</p>
-                    <p id="passwordErrorLength" class="hidden">Error ingrese al menos 8 caracteres</p>
-                    <p id="passwordErrorCaracter" class="hidden">Error ingrese solo letras y numeros</p>
+                    <p id="msgPassword" class="text-error"></p>
                 </div>
                 <div class="div-int">
                     <div class="last-div">
                         <label>Repeat Password</label>
                         <input id="passwordRepeat" type="password" placeholder="Password">
-                        <p id="password-repeat-error" class="hidden">Campo obligatorio</p>
+                        <p id="msgPasswordRepeat" class="text-error"></p>
                         <p id="passwordRepeatErrorLength" class="hidden">Error ingrese al menos 8 caracteres</p>
                         <p id="passwordRepeatErrorCaracter" class="hidden">Error ingrese solo letras y numeros</p>
                     </div>
