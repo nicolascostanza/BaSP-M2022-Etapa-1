@@ -61,4 +61,16 @@ GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-05/inde
 
 GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
 
+### Week 7
+
+◉ Concatenate the urls with the corresponding query params
+
+◉ Perform the fetch, did the json conversion and then work with the data obtained
+
+◉ At the end of the second .then store the data in local storage
+
+◉ Then to finish, make a function that asks if I have something in the local storage to paint that data in each input
+
+GitHubPages: https://nicolascostanza.github.io/BaSP-M2022-Etapa-1/Semana-07/views/index.html
+
 Author: Nicolas Costanza

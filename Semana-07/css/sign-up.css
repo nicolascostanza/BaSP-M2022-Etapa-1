@@ -164,7 +164,7 @@ footer {
   color: #373867;
   cursor: pointer;
 }
-.modal {
+.modal{
   display: none;
   position: fixed;
   z-index: 1;
@@ -198,7 +198,7 @@ footer {
   color: red;
 }
 .active-modal{
-  display: block !important;
+  display: block;
 }
 .close {
   color: #aaa;

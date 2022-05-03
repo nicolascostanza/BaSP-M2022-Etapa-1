@@ -119,7 +119,6 @@ btn.onclick = function (e) {
       text.innerHTML = "<h3>" + jsonResponse.msg + "</h3>";
     })
   } else {
-    console.log("error");
     modalOk.classList.remove("hidden");
     modalOk.classList.add("active");
     var text = document.getElementById("p-login");
