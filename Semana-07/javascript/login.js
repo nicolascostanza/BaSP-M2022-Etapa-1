@@ -88,7 +88,6 @@ function passwordBlur(e) {
         passwordLogin.classList.remove("borderWarning");
         passwordLogin.classList.add("borderSuccess");
         validatePasswordLogin = true;
-        // return checkedPW = password.value;
       } else {
         p = document.getElementById("passwordErrorCaracter-login");
         p.classList.replace("hidden", "active");
@@ -126,13 +125,11 @@ btn.onclick = function (e) {
   }
 };
 span.onclick = function () {
-  // modalOk.style.display = "none";
   modalOk.classList.remove("active");
   modalOk.classList.add("hidden");
 };
 window.onclick = function (event) {
   if (event.target == modalOk) {
-    // modalOk.style.display = "none";
     modalOk.classList.remove("active");
     modalOk.classList.add("hidden");
   }

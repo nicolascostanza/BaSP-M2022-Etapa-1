@@ -39,11 +39,8 @@ var textPostal = document.getElementById("msgPostal");
 var textEmail = document.getElementById("msgEmail");
 var textPassword = document.getElementById("msgPassword");
 var TextRepeatPassword = document.getElementById("msgPasswordRepeat");
-// array de banderas para validacion
-
 // array de mensajes con error
 var errorMessages = [textName, textSurname, textDni, textDate, textPhone, textAddress, textLocation, textPostal, textEmail, textPassword, TextRepeatPassword];
-
 var InputsName = ["Name: ", "Surname: ", "Dni: ", "Date: ", "Phone: ", "Address: ", "Location: ", "Postal: ", "Email: ", "Password: ", "Password Repeat: "];
 // eventos
 nombre.addEventListener("blur", nameBlur);
@@ -68,7 +65,7 @@ password.addEventListener("blur", passwordBlur);
 password.addEventListener("focus", passwordFocus);
 passwordRepeat.addEventListener("blur", passwordRepeatBlur);
 passwordRepeat.addEventListener("blur", passwordRepeatFocus);
-
+// funciones de eventos blur
 function nameBlur(e) {
 	var nameValue = e.target.value;
 	if (nameValue == "") {
@@ -460,6 +457,7 @@ function passwordRepeatBlur(e) {
 		}
 	}
 }
+// funciones eventos focus
 function nameFocus() {
 	textName.textContent = "";
 }
@@ -493,7 +491,6 @@ function passwordFocus() {
 function passwordRepeatFocus() {
 	TextRepeatPassword.textContent = "";
 }
-
 btn.onclick = function (e) {
 	e.preventDefault();
 	var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup";
@@ -554,13 +551,10 @@ btn.onclick = function (e) {
 	}
 }
 span.onclick = function () {
-	// modal.classList.remove("active");
-	// modal.classList.replace("active", "hidden");
 	modal.style.display = "none";
 }
 window.onclick = function (event) {
 	if (event.target == modal) {
-		// modal.classList.replace("active", "hidden");
 		modal.style.display = "none";
 	}
 }
